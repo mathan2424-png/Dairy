@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | India Dairy Show 2027</title>
+    <meta name="description"
+        content="Learn more about India Dairy Show 2027, organized by Prompt Trade Fairs. Discover our mission to revolutionize the dairy industry in South India.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
+    <style>
+        .about-hero {
+            min-height: 420px;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgb(15 23 42 / 8%)), url(assets/about_hero.png) no-repeat center center / cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 140px 0 90px;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .about-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05rem;
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .mv-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary);
+        }
+
+        .mv-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .mv-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.2rem;
+            transition: transform 0.4s ease;
+        }
+
+        .mv-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .mv-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .organizer-section {
+            background: #ffffff;
+            border-radius: 40px;
+            margin: 4rem 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #e2e8f0;
+        }
+
+        .organizer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 0;
+            align-items: stretch;
+        }
+
+        .organizer-info-side {
+            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.82)), url('assets/organizer_bg.png') no-repeat center center/cover;
+            padding: 80px 50px;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .organizer-info-side h2 {
+            color: var(--white) !important;
+        }
+
+        .organizer-stats-side {
+            background: #ffffff;
+            padding: 80px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .organizer-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .org-stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .org-stat-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            background: #ffffff;
+            box-shadow: var(--shadow-md);
+        }
+
+        .org-stat-item .number {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .org-stat-item .label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .values-section {
+            padding: 80px 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .value-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+        }
+
+        .value-item i {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            transition: transform 0.4s ease;
+        }
+
+        .value-item:hover i {
+            transform: scale(1.1);
+        }
+
+        .value-item h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .value-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .organizer-brief-box {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-left: 5px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-top: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .organizer-brief-box p {
+            margin-bottom: 0 !important;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #334155;
+        }
+
+        @media (max-width: 992px) {
+            .about-hero {
+                min-height: 360px;
+                padding: 130px 0 72px;
+            }
+
+            .mission-vision-grid {
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .organizer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .organizer-info-side, .organizer-stats-side {
+                padding: 60px 30px;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                min-height: auto;
+                padding: 118px 0 56px;
+            }
+
+            .about-hero h1 {
+                font-size: clamp(2.2rem, 10vw, 3.2rem);
+            }
+
+            .about-hero p {
+                font-size: 0.98rem;
+            }
+
+            .mission-vision-grid,
+            .organizer-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .organizer-section {
+                border-radius: 24px;
+                margin: 3rem 0;
+            }
+
+            .organizer-info-side, .organizer-stats-side {
+                padding: 36px 20px;
+            }
+
+            .organizer-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .value-item,
+            .mv-card {
+                padding: 2rem 1.4rem;
+            }
+
+            .organizer-brief-box {
+                padding: 1.25rem;
+                margin-top: 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="India Dairy Show 2027" class="nav-logo">
+                </a>
+            </div>
+            <ul class="nav-links" id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="exhibitors.html">Exhibitor</a></li>
+                <li><a href="visitors.html">Visitors</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
+                aria-controls="primary-navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <h1>About Us</h1>
+                <p class="max-w-700">Prompt Trade Fairs India Private Limited proudly brings together the vision, experience, and industry focus behind India Dairy Show 2027.</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="grid-2">
+                    <div class="about-image-container">
+                        <img src="assets/why_attend.png" alt="Traditional Indian Bull" class="about-img-styled">
+                        <div class="organizer-brief-box">
+                            <p>We, <strong>Prompt Trade Fairs India Private Limited.</strong>, are the organizers of <strong>India Dairy Show 2027</strong>. We are the pioneers in the field of Exhibitions and had the experience of organizing over <strong>800+ successful exhibitions</strong> for over a decade in all over pan India.</p>
+                        </div>
+                    </div>
+                    <div class="about-content-styled">
+                        <span class="section-subtitle">ABOUT US</span>
+                        <h2>Prompt Trade Fairs India <span class="text-blue">Private Limited</span></h2>
+                        <p><strong>India Dairy Show 2027:</strong> India Dairy Show 1st Edition welcomes your interest for an unparalleled opportunity to collaborate, explore, and connect to the future of the dairy industry. The India Dairy Show 1st Edition assures to be the epicenter of dairy innovation, collaboration, and growth.</p>
+                        <p>India Dairy Show is rapidly emerging as one of the largest and most influential South India dairy summits, surpassing renowned events like the Tamil Nadu Cooperative Milk Producers Federation Limited (TCMPF) - AAVIN. While focusing on innovation, sustainability, and regional market trends, it stands out due to its sheer market size, consumption patterns, and rapid industry transformation.</p>
+                        <p>With India being the largest producer and consumer of dairy, the country's dairy sector is witnessing unprecedented growth, driven by urbanisation, rising disposable income, evolving consumer preferences, and a strong emphasis on health and nutrition.</p>
+                        <p>India Dairy Show is setting the stage for South Indian dairy leadership, offering insights, partnerships, and innovations that will shape the future of dairy worldwide. Expanding cold chain infrastructure, increasing private sector investments, and a growing appetite for value-added dairy products like ice creams, cheese, and sweets further strengthen India's position as the global dairy leader.</p>
+                        <p>Given that milk and dairy are an intrinsic part of Indian food culture, India Dairy Show will become the ultimate platform for industry leaders, innovators, and stakeholders, offering unmatched business opportunities and insights into the future of South Indian dairy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Focus -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="text-center mb-50">
+                    <span class="section-subtitle">STRATEGIC FOCUS</span>
+                    <h2>Market Leadership & <span class="text-blue">Industry Growth</span></h2>
+                </div>
+                <div class="mission-vision-grid">
+                    <div class="mv-card">
+                        <div class="mv-icon"><i class="fas fa-crown"></i></div>
+                        <h3>Market Leadership</h3>
+                        <p>India Dairy Show is setting the stage for South Indian dairy leadership, offering insights, partnerships, and innovations that will shape the future of dairy worldwide.</p>
+                    </div>
+                    <div class="mv-card">
+                        <div class="mv-icon"><i class="fas fa-industry"></i></div>
+                        <h3>Industry Growth</h3>
+                        <p>Expanding cold chain infrastructure, increasing private sector investments, and a growing appetite for value-added dairy products like ice creams, cheese, and sweets further strengthen India's position as the global dairy leader.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organizer Stats -->
+        <section class="container">
+            <div class="organizer-section">
+                <div class="organizer-grid">
+                    <div class="organizer-info-side">
+                        <span class="section-subtitle" style="color: var(--secondary);">THE ORGANIZERS</span>
+                        <h2>Prompt Trade Fairs India <span class="text-white">Pvt. Ltd.</span></h2>
+                        <p style="opacity: 0.9; margin-bottom: 2rem;">We are pioneers in the field of exhibitions, with more than a decade of experience and over 800 successful exhibitions delivered across India. Our expertise helps every edition of India Dairy Show create stronger industry connections and real business opportunities.</p>
+                    </div>
+                    <div class="organizer-stats-side">
+                        <div class="organizer-stats">
+                            <div class="org-stat-item">
+                                <span class="number" data-countup>800+</span>
+                                <span class="label">Successful Exhibitions</span>
+                            </div>
+                            <div class="org-stat-item">
+                                <span class="number" data-countup>10+</span>
+                                <span class="label">Years Excellence</span>
+                            </div>
+                            <div class="org-stat-item">
+                                <span class="number" data-countup>50K+</span>
+                                <span class="label">Satisfied Visitors</span>
+                            </div>
+                            <div class="org-stat-item">
+                                <span class="number" data-countup>20+</span>
+                                <span class="label">Major Cities</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Core Values -->
+        <section class="values-section">
+            <div class="container">
+                <div class="text-center mb-50">
+                    <span class="section-subtitle">THE ULTIMATE PLATFORM</span>
+                    <h2>Connecting the <span class="text-blue">Dairy Ecosystem</span></h2>
+                </div>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Collaborate</h3>
+                        <p>Unmatched business opportunities and insights into the future of South Indian dairy for industry leaders and stakeholders.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Innovate</h3>
+                        <p>Focusing on innovation and sustainability to meet evolving consumer preferences and the strong emphasis on health and nutrition.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-globe"></i>
+                        <h3>Lead</h3>
+                        <p>Surpassing renowned events to become the ultimate platform for the rapid transformation of the global dairy market.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <img src="assets/logo.png" alt="India Dairy Show" class="footer-logo">
+                <p>Leading the transformation of South Indian dairy industry through innovation and collaboration.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="exhibitors.html">Exhibitor</a></li>
+                    <li><a href="visitors.html">Visitors</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-office">
+                <h4>Head Office Address</h4>
+                <p>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,Off Radial Road, Near Kamakshi Hospital,<br>Pallikaranai, Chennai - 600 100, India.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><strong>Phone:</strong> <a href="tel:+914442142483">+91 44 4214 2483</a></p>
+                <p><strong>Mobile:</strong></p>
+                <p style="margin-top: -10px;"><a href="tel:+919391391162">93913 91162</a></p>
+                <p style="margin-top: -10px;"><a href="tel:+919941008371">99410 08371</a></p>
+                <p><strong>Email:</strong> <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a><br><a
+                        href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a
+                        href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer"
+                        style="color: inherit; text-decoration: underline;">Ocean Softwares</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+</body>
+
+</html>

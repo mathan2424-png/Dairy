@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Center | India Dairy Show 2027</title>
+    <meta name="description" content="Access the latest press releases, image galleries, and event videos from India Dairy Show 2027. Stay updated with the epicenter of dairy innovation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
+    <style>
+        .media-hero {
+            min-height: 420px;
+            padding: 140px 0 90px;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.45)), url('assets/media_hero.png') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .media-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .media-hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .media-tabs-container {
+            background: var(--white);
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #eef2f6;
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+        }
+
+        .tab-list {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .tab-item {
+            font-weight: 700;
+            color: #64748b;
+            cursor: pointer;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.95rem;
+            border: 1.5px solid transparent;
+            background: #f8fafc;
+        }
+
+        .tab-item:hover {
+            color: var(--secondary);
+            background: #f1f5f9;
+        }
+
+        .tab-item.active {
+            color: white;
+            background: var(--primary);
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+        }
+
+        .media-section {
+            padding: 100px 0;
+            scroll-margin-top: 140px;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 16/11;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(15, 23, 42, 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay i {
+            transform: translateY(0);
+        }
+
+        .gallery-caption {
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            transform: translateY(10px);
+            transition: transform 0.4s ease 0.1s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Video Section */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .video-card {
+            border-radius: 32px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+            transition: all 0.4s ease;
+            border: 1px solid #f1f5f9;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+        }
+
+        .video-thumb {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .video-card:hover .video-thumb img {
+            transform: scale(1.05);
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 2;
+        }
+
+        .video-card:hover .play-btn {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        .video-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .video-info h4 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--primary);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 992px) {
+            .video-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .media-hero {
+                min-height: auto;
+                padding: 130px 0 80px;
+            }
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            .media-tabs-container {
+                padding: 1rem 0;
+            }
+            .tab-list {
+                gap: 0.75rem;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 0 1rem;
+                scrollbar-width: none;
+            }
+            .tab-list::-webkit-scrollbar {
+                display: none;
+            }
+            .tab-item {
+                padding: 0.6rem 1.4rem;
+                white-space: nowrap;
+                font-size: 0.85rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="India Dairy Show 2027" class="nav-logo">
+                </a>
+            </div>
+            <ul class="nav-links" id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="exhibitors.html">Exhibitor</a></li>
+                <li><a href="visitors.html">Visitors</a></li>
+                <li><a href="media.html" class="active">Media</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Media Hero -->
+        <section class="media-hero">
+            <div class="container">
+                <span class="section-subtitle" style="color: #fcd34d;">LATEST NEWS & UPDATES</span>
+                <h1>Media Center</h1>
+                <p>Explore official highlights, event galleries, and a comprehensive visual journey of India Dairy Show 2027.</p>
+            </div>
+        </section>
+
+        <!-- Media Tabs -->
+        <div class="media-tabs-container">
+            <div class="container">
+                <ul class="tab-list">
+                    <li class="tab-item active" onclick="scrollToSection('gallery')">Photo Gallery</li>
+                    <li class="tab-item" onclick="scrollToSection('videos')">Videos</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <section class="media-section" id="gallery">
+            <div class="container">
+                <div class="text-center mb-50">
+                    <span class="section-subtitle">Visual Highlights</span>
+                    <h2>Event <span class="text-blue">Gallery</span></h2>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="assets/prime_expo_networking.png" alt="IDS 2027 Networking">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span class="gallery-caption">Networking Sessions</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/layout image .jpeg" alt="Floor Plan View">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span class="gallery-caption">Exhibition Floor Plan</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/visitors_collage.png" alt="IDS Attendees">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span class="gallery-caption">Visitor Interaction</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/hero.png" alt="IDS Highlight">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span class="gallery-caption">Main Hall Highlights</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/cattle.png" alt="Cattle Tech">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span class="gallery-caption">Modern Farming Tech</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/v_research.png" alt="Research Pavilion">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span class="gallery-caption">Research & Innovation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Videos -->
+        <section class="media-section" id="videos" style="background: #f8fafc;">
+            <div class="container">
+                <div class="text-center mb-50">
+                    <span class="section-subtitle">Motion Experience</span>
+                    <h2>Video <span class="text-blue">Archive</span></h2>
+                </div>
+
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-thumb">
+                            <img src="assets/visitors_banner.png" alt="IDS 2027 Promo">
+                            <div class="play-btn"><i class="fas fa-play"></i></div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Official Promo Video</h4>
+                            <p>An overview of what to expect at India Dairy Show 2027.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-thumb">
+                            <img src="assets/prime_expo_networking.png" alt="Expert Talk">
+                            <div class="play-btn"><i class="fas fa-play"></i></div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Expert Interviews</h4>
+                            <p>Industry leaders sharing insights on dairy automation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <img src="assets/logo.png" alt="India Dairy Show" class="footer-logo">
+                <p>Leading the transformation of South Indian dairy industry through innovation and collaboration.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="exhibitors.html">Exhibitor</a></li>
+                    <li><a href="visitors.html">Visitors</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-office">
+                <h4>Head Office Address</h4>
+                <p>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi Hospital,<br>Pallikaranai, Chennai - 600 100, India.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><strong>Phone:</strong> <a href="tel:+914442142483">+91 44 4214 2483</a></p>
+                <p><strong>Mobile:</strong></p>
+                <p style="margin-top: -10px;"><a href="tel:+919391391162">93913 91162</a></p>
+                <p style="margin-top: -10px;"><a href="tel:+919941008371">99410 08371</a></p>
+                <p><strong>Email:</strong> <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a><br><a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Ocean Softwares</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                const offset = 130;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = element.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Update active tab
+                document.querySelectorAll('.tab-item').forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.textContent.toLowerCase().includes(id)) {
+                        tab.classList.add('active');
+                    }
+                });
+            }
+        }
+
+        // Handle active state on scroll
+        window.addEventListener('scroll', () => {
+            const sections = ['gallery', 'videos'];
+            const scrollPos = window.scrollY + 150;
+
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (section && scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+                    document.querySelectorAll('.tab-item').forEach(tab => {
+                        tab.classList.remove('active');
+                        if (tab.textContent.toLowerCase().includes(id)) {
+                            tab.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

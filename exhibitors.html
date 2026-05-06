@@ -14,7 +14,691 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
+    <style>
+        .page-hero {
+            min-height: 420px;
+            background: linear-gradient(rgba(15, 23, 42, 0.705), rgba(15, 23, 42, 0.623)), url(assets/exhibitor_hero.png) no-repeat center center / cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 140px 0 90px;
+            position: relative;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .brochure-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brochure-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .brochure-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .brochure-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .brochure-img-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .brochure-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease;
+        }
+
+        .brochure-img-container:hover .brochure-img {
+            transform: translateY(-10px) rotate(-2deg);
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--secondary);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.4);
+            color: white;
+        }
+
+        .btn-download i {
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 992px) {
+            .brochure-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .brochure-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .layout-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+
+        .layout-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .layout-flex-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+            flex-wrap: wrap;
+        }
+
+        .layout-img-side {
+            flex: 0.8;
+            max-width: 450px;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .layout-content-side {
+            flex: 0.8;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .layout-content-side h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .layout-content-side h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .layout-content-side p {
+            font-size: 1.1rem;
+            color: #64748b;
+            line-height: 1.7;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .layout-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            padding: 1.25rem 1.5rem;
+            background: #f8fafc;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease backwards;
+        }
+
+        .info-item:hover {
+            transform: translateX(8px);
+            background: white;
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+        }
+
+        .info-item:nth-child(1) { animation-delay: 0.2s; }
+        .info-item:nth-child(2) { animation-delay: 0.4s; }
+        .info-item:nth-child(3) { animation-delay: 0.6s; }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .info-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .layout-img-side {
+            animation: fadeInUp 0.8s ease 0.8s backwards;
+        }
+
+        .layout-content-side h2, 
+        .layout-content-side p {
+            animation: fadeInUp 0.8s ease backwards;
+        }
+
+        .layout-img-wrapper {
+            background: var(--white);
+            padding: 10px;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid #eef2f6;
+            margin-top: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+
+
+        .layout-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .layout-img-wrapper:hover .layout-img {
+            transform: scale(1.02);
+        }
+
+        .layout-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        /* Zoom Modal */
+        .zoom-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .zoom-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .zoom-modal-content {
+            max-width: 95%;
+            max-height: 95%;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .zoom-modal-content.zoomed-container {
+            overflow: auto;
+            display: block;
+        }
+
+        .zoom-modal.active .zoom-modal-content {
+            transform: scale(1);
+        }
+
+        .zoom-modal-img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+            background: white;
+            display: block;
+            cursor: zoom-in;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .zoom-modal-img.zoomed {
+            transform: scale(2.2);
+            cursor: zoom-out;
+            margin: 20% 0;
+        }
+
+        .zoom-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            background: none;
+            border: none;
+        }
+
+        .zoom-close:hover {
+            color: var(--secondary);
+        }
+
+        .view-plan-btn {
+            margin-top: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+        }
+
+        .view-plan-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+            color: white;
+        }
+
+        @media (max-width: 992px) {
+            .layout-flex-wrapper {
+                gap: 3rem;
+                justify-content: center;
+            }
+
+            .layout-img-side,
+            .layout-content-side {
+                flex: 1 1 100%;
+                max-width: none;
+                min-width: 0;
+            }
+
+            .layout-content-side {
+                text-align: center;
+            }
+
+            .layout-content-side h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .layout-info-list {
+                gap: 1.25rem;
+            }
+
+            .info-item {
+                align-items: center;
+                border-left: none;
+                border-top: 3px solid var(--primary);
+                padding-left: 0;
+                padding-top: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .brochure-section,
+            .layout-section {
+                padding: 64px 0;
+            }
+
+            .brochure-content h2 {
+                font-size: clamp(2rem, 9vw, 2.6rem);
+            }
+
+            .brochure-content p,
+            .layout-content-side p {
+                font-size: 1rem;
+            }
+
+            .layout-flex-wrapper {
+                gap: 2.25rem;
+            }
+
+            .layout-info-list {
+                gap: 1rem;
+            }
+
+            .view-plan-btn,
+            .btn-download {
+                width: 100%;
+                justify-content: center;
+                padding: 1rem 1.25rem;
+            }
+
+            .zoom-modal {
+                padding: 1rem;
+            }
+
+            .zoom-modal-img {
+                max-height: 72vh;
+            }
+
+            .zoom-close {
+                top: -42px;
+                font-size: 2rem;
+            }
+        }
+
+        /* Split Guidelines Section */
+        .guidelines-section {
+            padding: 100px 0;
+            background: #ffffff;
+        }
+
+        .guidelines-split-wrapper {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 4rem;
+            align-items: flex-start;
+        }
+
+        .guidelines-sticky-side {
+            position: sticky;
+            top: 120px;
+        }
+
+        .guideline-sticky-card {
+            background: var(--secondary);
+            color: white;
+            padding: 3rem;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .guideline-sticky-card h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .guideline-sticky-card h3 i {
+            color: #fcd34d;
+        }
+
+        .guideline-sticky-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .guideline-sticky-list li {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .guideline-sticky-list li:last-child {
+            border-bottom: none;
+        }
+
+        .guideline-sticky-list li strong {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .guideline-sticky-list li span {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Scrollable Side */
+        .services-scroll-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .service-feature-card {
+            background: #f8fafc;
+            padding: 2rem 2.5rem;
+            border-radius: 24px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-feature-card:hover {
+            background: white;
+            border-color: var(--primary);
+            transform: translateX(10px);
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        .service-icon-box {
+            width: 60px;
+            height: 60px;
+            background: white;
+            color: var(--primary);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+            flex-shrink: 0;
+        }
+
+        .service-text h4 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+        }
+
+        .service-text p {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        .payment-terms-banner {
+            margin-top: 4rem;
+            background: #f1f5f9;
+            border-radius: 30px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .payment-info h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .payment-info p {
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-highlight {
+            background: white;
+            padding: 2.25rem;
+            border-radius: 28px;
+            border: 2px solid #fee2e2;
+            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.08);
+            max-width: 420px;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            line-height: 1.6;
+            transition: transform 0.3s ease;
+        }
+
+        .payment-highlight:hover {
+            transform: scale(1.02);
+            border-color: #fca5a5;
+        }
+
+        .payment-highlight i {
+            color: #ef4444;
+            font-size: 1.5rem;
+            margin-top: 4px;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .payment-step {
+            display: flex;
+            gap: 1.25rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .payment-step:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .guidelines-split-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .guidelines-sticky-side {
+                position: static;
+            }
+            .payment-terms-banner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .payment-grid {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .service-feature-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+            }
+            .payment-grid {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -25,28 +709,28 @@
                     <img src="assets/logo.png" alt="India Dairy Show 2027" class="nav-logo">
                 </a>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About Us</a></li>
-                <li><a href="#" class="active">Exhibitor</a></li>
-                <li><a href="index.html#visitors">Visitors</a></li>
-                <li><a href="#">Media</a></li>
-                <li><a href="index.html#booking">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="exhibitors.html" class="active">Exhibitor</a></li>
+                <li><a href="visitors.html">Visitors</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
-            <div class="mobile-menu-btn">
+            <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
+                aria-controls="primary-navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main>
         <!-- Hero Section for Exhibitors -->
         <section class="page-hero">
-            <div class="hero-overlay"></div>
             <div class="container">
-                <div class="hero-content">
-                    <h1>Exhibitor <span class="gradient-text">Information</span></h1>
-                    <p>Join the premier platform for dairy innovation and business growth.</p>
+                <div class="hero-content" style="transform: none; padding-bottom: 0;">
+                    <h1>Exhibitor <span class="gradient-text" style="display: inline; background: linear-gradient(90deg, #3b82f6 5%, #60a5fa 95%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Information</span></h1>
+                    <p>Join the premier gathering of dairy professionals and showcase your innovations to a global audience.</p>
                 </div>
             </div>
         </section>
@@ -58,7 +742,7 @@
                     <span class="section-subtitle">Exhibitor Profiles</span>
                     <h2>A Global Stage for <span class="text-blue">Dairy Innovation</span></h2>
                 </div>
-                
+
                 <div class="categories-scroll-wrapper">
                     <button class="scroll-btn scroll-btn-prev" onclick="scrollCategories(-1)" aria-label="Previous">
                         <i class="fas fa-chevron-left"></i>
@@ -70,8 +754,9 @@
                                 <img src="assets/dairy_tech_advanced.png" alt="Dairy Technology">
                             </div>
                             <div class="prime-cat-info">
-                                <h3>Dairy Technology</h3>
-                                <p>Milking machines, automation, genetic technology, cattle feeding systems, and farm management software.</p>
+                                <h3>Dairy Farming & Technology</h3>
+                                <p>Milking machines, automation, genetic technology, cattle feeding systems, and farm
+                                    management software.</p>
                             </div>
                         </div>
 
@@ -93,7 +778,8 @@
                             </div>
                             <div class="prime-cat-info">
                                 <h3>Processing & Packaging Machinery</h3>
-                                <p>Milk processing plants, cheese/butter making equipment, filling machines, and packaging materials.</p>
+                                <p>Milk processing plants, cheese/butter making equipment, filling machines, and
+                                    packaging materials.</p>
                             </div>
                         </div>
 
@@ -115,7 +801,8 @@
                             </div>
                             <div class="prime-cat-info">
                                 <h3>Services & Solutions</h3>
-                                <p>Financial services, testing laboratories, consultancy, IT solutions, and sustainability/waste management providers.</p>
+                                <p>Financial services, testing laboratories, consultancy, IT solutions, and
+                                    sustainability/waste management providers.</p>
                             </div>
                         </div>
                     </div>
@@ -132,37 +819,224 @@
             <div class="container">
                 <div class="why-attend-wrapper">
                     <div class="why-attend-header">
-                        <h2>Why Attend the <br><span class="text-white">India Dairy Show?</span></h2>
-                        <p class="header-desc">Exhibiting at India Dairy Show offers a premier platform to generate high-quality leads</p>
+                        <h2>Why to Exhibit in India Dairy Show - 2027</h2>
+                        <p class="header-desc">Exhibiting at India Dairy Show offers a premier platform to generate
+                            high-quality leads,
+                            showcase new technologies, and connect directly with industry decision-makers,
+                            farmers, and buyers to enhance brand visibility. It is essential for launching products,
+                            networking with industry peers, and gaining insights into market trends and innovations.
+                        </p>
                     </div>
 
                     <div class="why-attend-grid">
                         <div class="why-card">
                             <h3>Lead Generation & Sales</h3>
-                            <p>Connect with thousands of motivated, targeted industry buyers, cooperative heads, and potential partners.</p>
+                            <p>Connect with thousands of motivated, targeted industry buyers, cooperative heads, and
+                                potential partners.</p>
                         </div>
 
                         <div class="why-card">
                             <h3>Market Exposure & Brand Awareness</h3>
-                            <p>Increase visibility and showcase products to a diverse audience, including professionals, investors, and farmers, in a high-traffic environment. </p>
+                            <p>Increase visibility and showcase products to a diverse audience, including professionals,
+                                investors, and farmers, in a high-traffic environment. </p>
                         </div>
 
                         <div class="why-card">
                             <h3>Launch New Products & Technology</h3>
-                            <p>Showcase cutting-edge dairy machinery, processing solutions, and services, often through live demonstrations.</p>
+                            <p>Showcase cutting-edge dairy machinery, processing solutions, and services, often through
+                                live demonstrations.</p>
                         </div>
                         <div class="why-card">
                             <h3>Networking & Partnerships</h3>
-                            <p>Build relationships with industry leaders, suppliers, and potential collaborators to secure future business opportunities.</p>
+                            <p>Build relationships with industry leaders, suppliers, and potential collaborators to
+                                secure future business opportunities.</p>
                         </div>
                         <div class="why-card">
                             <h3>Market Insights</h3>
-                            <p>Gather feedback directly from users, observe competitors, and understand emerging trends in the dairy sector.</p>
+                            <p>Gather feedback directly from users, observe competitors, and understand emerging trends
+                                in the dairy sector.</p>
                         </div>
                         <div class="why-card">
                             <h3>Access Specialized Markets</h3>
-                            <p>Reach niche segments, including regional dairy processors and the burgeoning automated dairy technology market.</p>
+                            <p>Reach niche segments, including regional dairy processors and the burgeoning automated
+                                dairy technology market.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exhibitor Guidelines & Specifics -->
+        <section class="guidelines-section">
+            <div class="container">
+                <div class="text-center mb-50">
+                    <span class="section-subtitle">Official Guidelines</span>
+                    <h2>Exhibitor <span class="text-blue">Specifics & Services</span></h2>
+                </div>
+
+                <div class="guidelines-split-wrapper">
+                    <!-- Left: Sticky Specifics -->
+                    <div class="guidelines-sticky-side">
+                        <div class="guideline-sticky-card">
+                            <h3><i class="fas fa-calendar-check"></i> The Specifics</h3>
+                            <ul class="guideline-sticky-list">
+                                <li><strong>Event</strong> <span>India Dairy Show 2027</span></li>
+                                <li><strong>Dates</strong> <span>23rd - 25th April 2027</span></li>
+                                <li><strong>Venue</strong> <span>Codissia Trade Fair Complex, Coimbatore</span></li>
+                                <li><strong>Exhibition Timing</strong> <span>10 am - 6 pm</span></li>
+                                <li><strong>Stall Occupancy</strong> <span>10 am – 22nd April 2027</span></li>
+                                <li><strong>Stall Vacating</strong> <span>9 pm – 25th April 2027</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right: Scrollable Services -->
+                    <div class="services-scroll-side">
+                        <div class="service-feature-card">
+                            <div class="service-icon-box"><i class="fas fa-rug"></i></div>
+                            <div class="service-text">
+                                <h4>Premium Flooring</h4>
+                                <p>Synthetic clean carpet laid for the entire stall as well as the aisle area.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-feature-card">
+                            <div class="service-icon-box"><i class="fas fa-vector-square"></i></div>
+                            <div class="service-text">
+                                <h4>Stall Infrastructure</h4>
+                                <p>Pre-fabricated aluminum octonorm systems with premium white ply panels.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-feature-card">
+                            <div class="service-icon-box"><i class="fas fa-heading"></i></div>
+                            <div class="service-text">
+                                <h4>Fascia & Branding</h4>
+                                <p>Participant name in high-quality cut-graphics branding inside the stall.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-feature-card">
+                            <div class="service-icon-box"><i class="fas fa-chair"></i></div>
+                            <div class="service-text">
+                                <h4>Stall Furniture</h4>
+                                <p>Includes Table, Premium Chairs, and a Waste Paper basket as standard.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-feature-card">
+                            <div class="service-icon-box"><i class="fas fa-bolt"></i></div>
+                            <div class="service-text">
+                                <h4>Electrical Fittings</h4>
+                                <p>Equipped with Spot Lights and a 5A Power Socket for all your equipment needs.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-feature-card">
+                            <div class="service-icon-box"><i class="fas fa-shield-halved"></i></div>
+                            <div class="service-text">
+                                <h4>Support Services</h4>
+                                <p>General House-keeping, 24/7 Security, and Drinking water bottles at the venue.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Terms Banner -->
+                <div class="payment-terms-banner">
+                    <div class="payment-info">
+                        <span class="section-subtitle" style="text-align: left;">Financial Information</span>
+                        <h3>Payment Terms</h3>
+                        <p>Booking is simple and transparent. Secure your space early to ensure prime placement.</p>
+                        <div class="payment-grid">
+                            <div class="payment-step">
+                                <div class="step-num">1</div>
+                                <div><strong>25% Advance</strong><br>+ GST @ 18% at the time of booking.</div>
+                            </div>
+                            <div class="payment-step">
+                                <div class="step-num">2</div>
+                                <div><strong>75% Balance</strong><br>To be paid 30 days before the exhibition.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-highlight">
+                        <i class="fas fa-triangle-exclamation"></i>
+                        <div><strong>Crucial:</strong> No contract form will be entertained without advance payment. Payment by D.D / Crossed Cheque to <strong>Prompt Trade Fairs India Pvt. Ltd.</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exhibition Layout Section -->
+        <section id="layout" class="layout-section">
+            <div class="container">
+                <div class="layout-container">
+                    <div class="layout-flex-wrapper">
+                        <!-- Content Side -->
+                        <div class="layout-content-side">
+                            <h2>Layout</h2>
+                            <p>Strategically plan your stall location and discover the optimal flow for visitor interaction.</p>
+
+                            <div class="layout-info-list">
+                                <div class="info-item">
+                                    <span class="info-label">Exhibition Hall</span>
+                                    <span class="info-value">Hall C</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Total Area</span>
+                                    <span class="info-value">6,000+ Sqm</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Booking Status</span>
+                                    <span class="info-value" style="color: #059669;">Open for Reservation</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Side -->
+                        <div class="layout-img-side">
+                            <div class="layout-img-wrapper" onclick="openZoom()">
+                                <img src="assets/layout image .jpeg" alt="India Dairy Show 2027 Exhibition Floor Plan"
+                                    class="layout-img">
+                            </div>
+                            <button class="view-plan-btn" onclick="openZoom()">
+                                <i class="fas fa-search-plus"></i>
+                                <span>View Full Plan</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zoom Modal -->
+        <div class="zoom-modal" id="floorPlanModal">
+            <div class="zoom-modal-content">
+                <button class="zoom-close" onclick="closeZoom()">&times;</button>
+                <img src="assets/layout image .jpeg" alt="Full Resolution Floor Plan" class="zoom-modal-img"
+                    id="zoomableImg" onclick="toggleZoom(event)">
+                <p style="color: white; margin-top: 1rem; font-weight: 500;">Click image to Zoom In/Out | Click outside
+                    to close</p>
+            </div>
+        </div>
+
+        <!-- Event Brochure Section -->
+        <section id="brochure" class="brochure-section">
+            <div class="container">
+                <div class="brochure-grid">
+                    <div class="brochure-img-container">
+                        <img src="assets/brochure_mockup.png" alt="India Dairy Show 2027 Brochure" class="brochure-img">
+                    </div>
+                    <div class="brochure-content">
+                        <span class="section-subtitle">Resource Center</span>
+                        <h2>Download the <span class="text-blue">Official Event Brochure</span></h2>
+                        <p>Access the complete guide to India Dairy Show 2027. Includes floor plans, exhibitor lists,
+                            sponsorship opportunities, and technical session details.</p>
+                        <a href="https://www.indiadairyshow.com/dairy%20Expo%20BROUCHER.pdf" class="btn-download"
+                            target="_blank" download>
+                            <span>Download Brochure (PDF)</span>
+                            <i class="fas fa-file-download"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -174,43 +1048,50 @@
             <div class="footer-about">
                 <img src="assets/logo.png" alt="India Dairy Show" class="footer-logo">
                 <p>Leading the transformation of South Indian dairy industry through innovation and collaboration.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="exhibitors.html">Exhibitor</a></li>
-                    <li><a href="index.html#visitors">Visitors</a></li>
-                    <li><a href="#">Media</a></li>
-                    <li><a href="index.html#booking">Contact Us</a></li>
+                    <li><a href="visitors.html">Visitors</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
+            <div class="footer-office">
+                <h4>Head Office Address</h4>
+                <p>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi
+                    Hospital,<br>Pallikaranai, Chennai - 600 100, India.</p>
+            </div>
             <div class="footer-contact">
-                <h4>Prompt Trade Fairs</h4>
-                <p>Chennai, India</p>
-                <p>Email: prompttradefairs@gmail.com</p>
-                <p>Phone: +91 44 XXXX XXXX</p>
+                <h4>Contact Us</h4>
+                <p><strong>Phone:</strong> <a href="tel:+914442142483">+91 44 4214 2483</a></p>
+                <p><strong>Mobile:</strong></p>
+                <p style="margin-top: -10px;"><a href="tel:+919391391162">93913 91162</a></p>
+                <p style="margin-top: -10px;"><a href="tel:+919941008371">99410 08371</a></p>
+                <p><strong>Email:</strong> <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a><br><a
+                        href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a></p>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Ocean Softwares</a></p>
+                <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a
+                        href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer"
+                        style="color: inherit; text-decoration: underline;">Ocean Softwares</a></p>
             </div>
         </div>
     </footer>
 
+    <script src="site.js"></script>
     <script>
-        // Sticky Header
-        window.addEventListener('scroll', function () {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
         // Categories Scroll
         let categoriesAutoScrollTimer;
         let categoriesResumeTimer;
@@ -351,6 +1232,48 @@
         }
 
         setupCategoriesAutoScroll();
+
+        // Zoom Modal Functions
+        function openZoom() {
+            const modal = document.getElementById('floorPlanModal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeZoom() {
+            const modal = document.getElementById('floorPlanModal');
+            const img = document.getElementById('zoomableImg');
+            const container = modal.querySelector('.zoom-modal-content');
+
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                // Reset zoom state on close
+                img.classList.remove('zoomed');
+                container.classList.remove('zoomed-container');
+            }, 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        function toggleZoom(event) {
+            event.stopPropagation();
+            const img = document.getElementById('zoomableImg');
+            const container = img.parentElement;
+
+            img.classList.toggle('zoomed');
+            container.classList.toggle('zoomed-container');
+        }
+
+        // Close modal on outside click
+        window.onclick = function (event) {
+            const modal = document.getElementById('floorPlanModal');
+            if (event.target == modal) {
+                closeZoom();
+            }
+        }
     </script>
 </body>
 

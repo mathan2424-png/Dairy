@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | India Dairy Show 2027</title>
+    <meta name="description"
+        content="Contact India Dairy Show 2027 and Prompt Trade Fairs India Pvt. Ltd. for exhibitor, visitor, partnership, and event enquiries.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
+    <style>
+        .contact-hero {
+            min-height: 420px;
+            padding: 150px 0 110px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.56)), url('assets/prime_expo_networking.png') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-hero-copy {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(2.7rem, 5vw, 4.5rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.05;
+        }
+
+        .contact-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.84);
+            font-size: 1.05rem;
+        }
+
+        .contact-section {
+            padding-top: 105px;
+            padding-bottom: 80px;
+            background: linear-gradient(180deg, #eff6ff 0%, #f8fafc 52%, #ffffff 100%);
+        }
+
+        .contact-shell {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 2rem;
+            align-items: stretch;
+            margin-top: -70px;
+        }
+
+        .contact-form-card {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form-card form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .contact-form-card h2 {
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-form-intro {
+            color: var(--text-muted);
+            margin-bottom: 1.8rem;
+        }
+
+        .contact-form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .contact-form-grid .form-group {
+            margin-bottom: 0;
+        }
+
+        .form-group-full {
+            grid-column: 1 / -1;
+        }
+
+        .contact-form-card label {
+            display: block;
+            margin-bottom: 0.55rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .contact-form-note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .contact-form-feedback {
+            margin-top: 0.75rem;
+            font-size: 0.92rem;
+            color: var(--secondary);
+            min-height: 1.4rem;
+        }
+
+        /* Custom Error Labels */
+        .error-message {
+            color: #ef4444;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.25rem;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .form-group.has-error .error-message {
+            display: block;
+        }
+
+        .form-group.has-error input,
+        .form-group.has-error textarea {
+            border-color: #ef4444 !important;
+            background-color: #fef2f2;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .contact-info-card {
+            position: relative;
+            overflow: hidden;
+            padding: 2.4rem;
+            border-radius: 28px;
+            color: var(--white);
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.86)), url('assets/presence_new_bg.png') no-repeat center center/cover;
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
+        }
+
+        .contact-info-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.24), transparent 42%);
+            pointer-events: none;
+        }
+
+        .contact-info-card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.95rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-card h2 {
+            color: var(--white);
+            margin-bottom: 0.9rem;
+        }
+
+        .contact-info-card>p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.8rem;
+        }
+
+        .contact-info-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-info-item {
+            display: grid;
+            grid-template-columns: 54px minmax(0, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+        }
+
+        .contact-info-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            background: rgba(37, 99, 235, 0.22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            color: #7dd3fc;
+        }
+
+        .contact-info-item h3 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .contact-info-item p,
+        .contact-info-item a {
+            color: rgba(255, 255, 255, 0.84);
+            line-height: 1.65;
+        }
+
+        .contact-info-item a:hover {
+            color: var(--white);
+        }
+
+        .contact-inline-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem 0.7rem;
+        }
+
+        .contact-inline-links span {
+            color: rgba(255, 255, 255, 0.44);
+        }
+
+        .contact-actions {
+            display: grid;
+            gap: 0.85rem;
+            margin-top: 1.6rem;
+        }
+
+        .contact-action-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.95rem 1.1rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .contact-action-link:hover {
+            background: rgba(255, 255, 255, 0.16);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 992px) {
+            .contact-shell {
+                grid-template-columns: 1fr;
+                margin-top: -48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero {
+                min-height: auto;
+                padding: 130px 0 82px;
+            }
+
+            .contact-hero-copy {
+                max-width: none;
+            }
+
+            .contact-section {
+                padding-bottom: 56px;
+            }
+
+            .contact-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info-card,
+            .contact-form-card {
+                padding: 1.5rem;
+            }
+
+            .contact-info-item {
+                grid-template-columns: 48px minmax(0, 1fr);
+                padding: 0.9rem;
+            }
+
+            .contact-info-icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 14px;
+            }
+
+            .contact-action-link {
+                padding: 0.9rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-hero {
+                padding: 118px 0 64px;
+            }
+
+            .contact-hero h1 {
+                font-size: clamp(2.2rem, 11vw, 3rem);
+            }
+
+            .contact-form-card,
+            .contact-info-card {
+                padding: 1.25rem;
+            }
+
+            .contact-info-item {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info-icon {
+                width: 44px;
+                height: 44px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="India Dairy Show 2027" class="nav-logo">
+                </a>
+            </div>
+            <ul class="nav-links" id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="exhibitors.html">Exhibitor</a></li>
+                <li><a href="visitors.html">Visitors</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
+                aria-controls="primary-navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <div class="contact-hero-copy">
+                    <span class="section-subtitle" style="color: #7dd3fc;">GET IN TOUCH</span>
+                    <h1>Contact Us</h1>
+                    <p>Reach Prompt Trade Fairs India Pvt. Ltd. for exhibitor bookings, visitor enquiries, partnerships,
+                        and event coordination for India Dairy Show 2027.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-shell">
+                    <!-- Left Side: Contact Information -->
+                    <aside class="contact-info-card" aria-label="Head office information">
+                        <span class="contact-chip"><i class="fas fa-building"></i> Prompt Trade Fairs</span>
+                        <h2>Contact Us</h2>
+                        <p>Prompt Trade Fairs India Pvt. Ltd.</p>
+
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-location-dot"></i></div>
+                                <div>
+                                    <h3>Head Office Address</h3>
+                                    <p>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road,
+                                        Near Kamakshi Hospital,<br>Pallikaranai, Chennai - 600 100, India.</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-phone-volume"></i></div>
+                                <div>
+                                    <h3>Phone</h3>
+                                    <p><a href="tel:+914442142483">+91 44 4214 2483</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-mobile-screen-button"></i></div>
+                                <div>
+                                    <h3>Mobile</h3>
+                                    <div class="contact-inline-links">
+                                        <a href="tel:+919391391162">93913 91162</a>
+                                        <span>/</span>
+                                        <a href="tel:+919941008371">99410 08371</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-envelope-open-text"></i></div>
+                                <div>
+                                    <h3>E-mail</h3>
+                                    <p style="margin-bottom: 0.4rem;">
+                                        <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a><br>
+                                        <a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a>
+                                    </p>
+                                    <p style="font-size: 0.85rem; opacity: 0.75; font-weight: 500;">Official & General Enquiries</p>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Right Side: Enquiry Form -->
+                    <form class="premium-form contact-form-card" id="contact-form" novalidate>
+                        <span class="section-subtitle">Enquiry Form</span>
+                        <h2>Let's start the conversation</h2>
+                        <p class="contact-form-intro">Fill in your details below.</p>
+
+                        <div class="contact-form-grid">
+                            <div class="form-group">
+                                <label for="contact-name">Name</label>
+                                <input id="contact-name" name="name" type="text" placeholder="Enter your name" required>
+                                <div class="error-message" id="error-name">Please enter a valid name (letters only).</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-mobile">Mobile Number</label>
+                                <input id="contact-mobile" name="mobile" type="tel" inputmode="tel"
+                                    placeholder="Enter mobile number" required>
+                                <div class="error-message" id="error-mobile">Please enter a valid mobile number (digits only).</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email Id</label>
+                                <input id="contact-email" name="email" type="email" placeholder="Enter email address"
+                                    required>
+                                <div class="error-message" id="error-email">Please enter a valid @gmail.com address.</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-company">Company Name</label>
+                                <input id="contact-company" name="company" type="text" placeholder="Enter company name"
+                                    required>
+                                <div class="error-message" id="error-company">Please enter a valid company name.</div>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" placeholder="Tell us about your enquiry"
+                                    required></textarea>
+                                <div class="error-message" id="error-message-field">Please enter your message.</div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full">Contact Us</button>
+                        <p class="contact-form-note">You can also directly email us if you prefer a manual enquiry.</p>
+                        <p class="contact-form-feedback" id="contact-form-feedback" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <img src="assets/logo.png" alt="India Dairy Show" class="footer-logo">
+                <p>Leading the transformation of South Indian dairy industry through innovation and collaboration.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="exhibitors.html">Exhibitor</a></li>
+                    <li><a href="visitors.html">Visitors</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-office">
+                <h4>Head Office Address</h4>
+                <p>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi
+                    Hospital,<br>Pallikaranai, Chennai - 600 100, India.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><strong>Phone:</strong> <a href="tel:+914442142483">+91 44 4214 2483</a></p>
+                <p><strong>Mobile:</strong></p>
+                <p style="margin-top: -10px;"><a href="tel:+919391391162">93913 91162</a></p>
+                <p style="margin-top: -10px;"><a href="tel:+919941008371">99410 08371</a></p>
+                <p><strong>Email:</strong> <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a><br><a
+                        href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a
+                        href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer"
+                        style="color: inherit; text-decoration: underline;">Ocean Softwares</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            const form = this;
+            const nameInput = document.getElementById('contact-name');
+            const mobileInput = document.getElementById('contact-mobile');
+            const emailInput = document.getElementById('contact-email');
+            const companyInput = document.getElementById('contact-company');
+            const messageInput = document.getElementById('contact-message');
+            const feedback = document.getElementById('contact-form-feedback');
+            
+            // Validation patterns
+            const stringPattern = /^[a-zA-Z\s]+$/;
+            const mobilePattern = /^\d+$/;
+            const gmailPattern = /@gmail\.com$/;
+            
+            let isValid = true;
+
+            function showError(input, errorId, show) {
+                const group = input.closest('.form-group');
+                if (show) {
+                    group.classList.add('has-error');
+                    isValid = false;
+                } else {
+                    group.classList.remove('has-error');
+                }
+            }
+            
+            // Name validation
+            showError(nameInput, 'error-name', !stringPattern.test(nameInput.value.trim()));
+            
+            // Mobile validation
+            showError(mobileInput, 'error-mobile', !mobilePattern.test(mobileInput.value.trim()));
+            
+            // Email validation
+            showError(emailInput, 'error-email', !gmailPattern.test(emailInput.value.trim().toLowerCase()));
+            
+            // Company validation
+            showError(companyInput, 'error-company', !stringPattern.test(companyInput.value.trim()));
+
+            // Message validation
+            showError(messageInput, 'error-message-field', messageInput.value.trim() === '');
+            
+            if (!isValid) {
+                feedback.innerHTML = `<span style="color: #ef4444; display: block; margin-top: 1rem; font-weight: 600;">Please fix the errors above.</span>`;
+                return;
+            }
+            
+            // If all valid, prepare email
+            const formData = new FormData(form);
+            const companyName = formData.get('company');
+            const subject = encodeURIComponent('India Dairy Show Enquiry - ' + companyName);
+            const bodyLines = [
+                'Name: ' + formData.get('name'),
+                'Mobile Number: ' + formData.get('mobile'),
+                'Email Id: ' + formData.get('email'),
+                'Company Name: ' + companyName,
+                '',
+                'Message:',
+                String(formData.get('message') || '')
+            ];
+            const body = encodeURIComponent(bodyLines.join('\n'));
+
+            feedback.innerHTML = '<span style="color: #059669; display: block; margin-top: 1rem; font-weight: 600;">Message valid! Opening your email client...</span>';
+            
+            window.location.href = 'mailto:project2@prompttradefairs.com,prompttradefairs@gmail.com?subject=' + subject + '&body=' + body;
+            
+            setTimeout(() => {
+                form.reset();
+                feedback.innerHTML = '<span style="color: #059669; display: block; margin-top: 1rem; font-weight: 600;">Message sent successfully via email client.</span>';
+                // Clear error classes just in case
+                document.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+            }, 2000);
+        });
+
+        // Real-time input filtering
+        document.getElementById('contact-mobile').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^\d]/g, '');
+        });
+
+        document.getElementById('contact-name').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        });
+
+        document.getElementById('contact-company').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        });
+    </script>
+</body>
+
+</html>
