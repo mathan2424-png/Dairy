@@ -276,3 +276,19 @@
     syncHeaderState();
     setupCountAnimations();
 })();
+
+// Accordion Toggle Function
+function toggleAccordion(header) {
+    const item = header.parentElement;
+    const container = item.parentElement;
+    
+    // Optional: Close other items
+    container.querySelectorAll('.accordion-item').forEach(otherItem => {
+        if (otherItem !== item) {
+            otherItem.classList.remove('active');
+        }
+    });
+    
+    // Toggle current item
+    item.classList.toggle('active');
+}

@@ -14,34 +14,18 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <style>
-        .contact-hero {
-            min-height: 420px;
-            padding: 150px 0 110px;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.56)), url('assets/prime_expo_networking.png') no-repeat center center/cover;
-            color: var(--white);
-            text-align: center;
-        }
+        
 
         .contact-hero-copy {
             max-width: 850px;
             margin: 0 auto;
         }
 
-        .contact-hero h1 {
-            font-size: clamp(2.7rem, 5vw, 4.5rem);
-            color: var(--white);
-            margin-bottom: 1rem;
-            line-height: 1.05;
-        }
+        
 
-        .contact-hero p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: rgba(255, 255, 255, 0.84);
-            font-size: 1.05rem;
-        }
+        
 
         .contact-section {
             padding-top: 105px;
@@ -290,10 +274,7 @@
         }
 
         @media (max-width: 768px) {
-            .contact-hero {
-                min-height: auto;
-                padding: 130px 0 82px;
-            }
+            
 
             .contact-hero-copy {
                 max-width: none;
@@ -329,13 +310,9 @@
         }
 
         @media (max-width: 480px) {
-            .contact-hero {
-                padding: 118px 0 64px;
-            }
+            
 
-            .contact-hero h1 {
-                font-size: clamp(2.2rem, 11vw, 3rem);
-            }
+            
 
             .contact-form-card,
             .contact-info-card {
@@ -400,10 +377,9 @@
     </header>
 
     <main>
-        <section class="contact-hero">
+        <section class="page-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.45)), url(assets/presence_new_bg.png) no-repeat center center / cover;">
             <div class="container">
                 <div class="contact-hero-copy">
-                    <span class="section-subtitle" style="color: #7dd3fc;">GET IN TOUCH</span>
                     <h1>Contact Us</h1>
                     <p>Reach Prompt Trade Fairs India Pvt. Ltd. for exhibitor bookings, visitor enquiries, partnerships,
                         and event coordination for India Dairy Show 2027.</p>
@@ -562,54 +538,45 @@
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="footer-office">
-                <h4>Head Office Address</h4>
-                <p style="display: flex; gap: 0.75rem;">
-                    <i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-top: 5px;"></i>
-                    <span>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi
-                        Hospital,<br>Pallikaranai, Chennai - 600 100, India.</span>
-                </p>
-            </div>
             <div class="footer-contact">
                 <h4>Contact Us</h4>
-                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
-                    <i class="fas fa-phone-alt"
-                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
-                    <div style="display: flex; gap: 6px;">
-                        <strong style="min-width: 60px;">Phone:</strong>
+                <div class="footer-info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="footer-info-content">
                         <a href="tel:+914442142483">+91 44 4214 2483</a>
                     </div>
                 </div>
-                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
-                    <i class="fas fa-mobile-alt"
-                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
-                    <div style="display: flex; gap: 6px;">
-                        <strong style="min-width: 60px;">Mobile:</strong>
-                        <div style="display: flex; flex-direction: column; gap: 4px;">
-                            <span><a href="tel:+919391391162">93913 91162</a> / <a href="tel:+919941008371">99410
-                                    08371</a></span>
-                        </div>
+                <div class="footer-info-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div class="footer-info-content">
+                        <span><a href="tel:+919391391162">93913 91162</a> / <a href="tel:+919941008371">99410 08371</a></span>
                     </div>
                 </div>
-                <div style="display: flex; gap: 18px; align-items: flex-start;position: relative;left: 1px;">
-                    <i class="fas fa-envelope"
-                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 6px;"></i>
-                    <div style="display: flex; gap: 6px;">
-                        <strong style="min-width: 60px;">Email:</strong>
-                        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                <div class="footer-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="footer-info-content">
+                        <div class="email-list">
                             <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a>
-                            <span style="color: rgba(255,255,255,0.2);">|</span>
                             <a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="footer-office">
+                <h4>Head Office</h4>
+                <div class="footer-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="footer-info-content">
+                        <span>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi
+                            Hospital,<br>Pallikaranai, Chennai - 600 100, India.</span>
+                    </div>
+                </div>
+            </div>
+            </div>
         <div class="footer-bottom">
             <div class="container">
                 <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a
-                        href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer"
-                        style="color: inherit; text-decoration: underline;">Ocean Softwares</a></p>
+                        href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer">Ocean Softwares</a></p>
             </div>
         </div>
     </footer>

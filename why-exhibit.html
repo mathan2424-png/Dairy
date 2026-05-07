@@ -14,38 +14,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
-    <style>
-        .page-hero {
-            min-height: 450px;
-            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.4)), url(assets/exhibit_premium_banner.png) no-repeat center center / cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            padding: 140px 0 90px;
-            position: relative;
-        }
-
-        .page-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.8rem);
-            color: var(--white);
-            margin-bottom: 1.2rem;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            font-weight: 800;
-            line-height: 1.1;
-        }
-
-        .page-hero p {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 1.35rem;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
 </head>
 
 <body>
@@ -95,7 +65,7 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="page-hero">
+        <section class="page-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.4)), url(assets/exhibit_premium_banner.png) no-repeat center center / cover;">
             <div class="container">
                 <div class="hero-content" style="transform: none; padding-bottom: 0;">
                     <h1>Why <span class="gradient-text">Exhibit?</span></h1>
@@ -109,7 +79,7 @@
         <section class="why-exhibit-intro">
             <div class="container">
                 <div class="intro-accent-line"></div>
-                <h2>Why to Exhibit in India Dairy Show - 2027</h2>
+                <h2>Why to Exhibit in India Dairy <span class="text-blue">Show - 2027</span></h2>
                 <p class="intro-text">Exhibiting at India Dairy Show offers a premier platform to generate
                     high-quality leads, showcase new technologies, and connect directly with industry decision-makers,
                     farmers, and buyers to enhance brand visibility. It is essential for launching products,
@@ -185,54 +155,45 @@
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="footer-office">
-                <h4>Head Office Address</h4>
-                <p style="display: flex; gap: 0.75rem;">
-                    <i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-top: 5px;"></i>
-                    <span>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi
-                        Hospital,<br>Pallikaranai, Chennai - 600 100, India.</span>
-                </p>
-            </div>
             <div class="footer-contact">
                 <h4>Contact Us</h4>
-                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
-                    <i class="fas fa-phone-alt"
-                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
-                    <div style="display: flex; gap: 6px;">
-                        <strong style="min-width: 60px;">Phone:</strong>
+                <div class="footer-info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="footer-info-content">
                         <a href="tel:+914442142483">+91 44 4214 2483</a>
                     </div>
                 </div>
-                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
-                    <i class="fas fa-mobile-alt"
-                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
-                    <div style="display: flex; gap: 6px;">
-                        <strong style="min-width: 60px;">Mobile:</strong>
-                        <div style="display: flex; flex-direction: column; gap: 4px;">
-                            <span><a href="tel:+919391391162">93913 91162</a> / <a href="tel:+919941008371">99410
-                                    08371</a></span>
-                        </div>
+                <div class="footer-info-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div class="footer-info-content">
+                        <span><a href="tel:+919391391162">93913 91162</a> / <a href="tel:+919941008371">99410 08371</a></span>
                     </div>
                 </div>
-                <div style="display: flex; gap: 18px; align-items: flex-start;position: relative;left: 1px;">
-                    <i class="fas fa-envelope"
-                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 6px;"></i>
-                    <div style="display: flex; gap: 6px;">
-                        <strong style="min-width: 60px;">Email:</strong>
-                        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                <div class="footer-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="footer-info-content">
+                        <div class="email-list">
                             <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a>
-                            <span style="color: rgba(255,255,255,0.2);">|</span>
                             <a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="footer-office">
+                <h4>Head Office</h4>
+                <div class="footer-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="footer-info-content">
+                        <span>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi
+                            Hospital,<br>Pallikaranai, Chennai - 600 100, India.</span>
+                    </div>
+                </div>
+            </div>
+            </div>
         <div class="footer-bottom">
             <div class="container">
                 <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a
-                        href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer"
-                        style="color: inherit; text-decoration: underline;">Ocean Softwares</a></p>
+                        href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer">Ocean Softwares</a></p>
             </div>
         </div>
     </footer>
