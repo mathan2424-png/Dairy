@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="boss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
 </head>
@@ -21,17 +22,25 @@
     <header id="main-header">
         <nav class="container">
             <div class="logo">
-                <img src="assets/logo.png" alt="India Dairy Show 2027" class="nav-logo">
+                <img src="boss_logo_red_1778152583202.png" alt="BOSS" class="nav-logo">
             </div>
             <ul class="nav-links" id="primary-navigation">
-                <li><a href="#hero">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="exhibitors.html">Exhibitor</a></li>
-                <li><a href="visitors.html">Visitors</a></li>
-                <li><a href="media.html">Media</a></li>
+                <li><a href="why-exhibit.html">Why Join Us</a></li>
+                <li class="has-dropdown">
+                    <a href="#gallery">Gallery <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="event-photos.html">Photos</a></li>
+                        <li><a href="event-videos.html">Videos</a></li>
+                    </ul>
+                </li>
+                <li><a href="exhibitors.html">Boss Leaders</a></li>
+                <li><a href="exhibit-profile.html">Chapters</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
-            <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false">
+            <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
+                aria-controls="primary-navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
         </nav>
@@ -43,23 +52,16 @@
             <div class="hero-overlay"></div>
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-dates">28, 29, 30 JANUARY 2027</div>
-                    <h1>
-                        <span class="hero-title-lead">The Future of</span>
-                        <span class="gradient-text">Dairy Innovation</span>
-                    </h1>
-                    <p class="hero-location">CODISSIA TRADE FAIR COMPLEX | COIMBATORE, TAMIL NADU, INDIA</p>
+                    <span class="hero-subtitle">BUSINESS OWNERS SYNERGY FOR SUCCESS</span>
+                    <h1>BOSS THE FUTURE</h1>
+                    <div class="hero-tagline">
+                        <span>Connect</span> <span>Contribute</span> <span>Succeed</span>
+                    </div>
+                    <a href="#booking" class="btn-boss">
+                        Join Now <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-            <!-- Button pinned to bottom of banner
-            <div class="hero-bottom-btn">
-                <a href="#booking" class="btn-burgundy">
-                    <span>Book Your Stall Now</span>
-                    <div class="btn-icon">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                </a>
-            </div> -->
         </section>
 
         <!-- About Section -->
@@ -77,9 +79,10 @@
                     <div class="about-grid-text">
                         <div class="about-col">
                             <h4>ABOUT US</h4>
-                            <p>We, Prompt Trade Fairs India Private Limited., are the organizers of India Dairy Show 
-2027. We are the pioneers in the field of Exhibitions and had the experience of 
-organizing over 800+ successful exhibitions for over a decade in all over pan India. </p>
+                            <p>We, Prompt Trade Fairs India Private Limited., are the organizers of India Dairy Show
+                                2027. We are the pioneers in the field of Exhibitions and had the experience of
+                                organizing over 800+ successful exhibitions for over a decade in all over pan India.
+                            </p>
                         </div>
                     </div>
                     <a href="about.html" class="btn-burgundy">
@@ -95,7 +98,7 @@ organizing over 800+ successful exhibitions for over a decade in all over pan In
         <!-- Parallax & Process Flow Section -->
         <section class="parallax-section">
             <div class="parallax-content container">
-                
+
                 <div class="process-wrapper">
                     <div class="process-step">
                         <div class="step-icon"><i class="fas fa-cow"></i></div>
@@ -107,28 +110,28 @@ organizing over 800+ successful exhibitions for over a decade in all over pan In
                         <div class="step-icon"><i class="fas fa-industry"></i></div>
                         <div class="step-details">
                             <h4>Processing</h4>
-                           
+
                         </div>
                     </div>
                     <div class="process-step">
                         <div class="step-icon"><i class="fas fa-snowflake"></i></div>
                         <div class="step-details">
                             <h4>Cold Storage</h4>
-                           
+
                         </div>
                     </div>
                     <div class="process-step">
                         <div class="step-icon"><i class="fas fa-box"></i></div>
                         <div class="step-details">
                             <h4>Packaging</h4>
-                           
+
                         </div>
                     </div>
                     <div class="process-step">
                         <div class="step-icon"><i class="fas fa-truck-fast"></i></div>
                         <div class="step-details">
                             <h4>Distribution</h4>
-                           
+
                         </div>
                     </div>
                 </div>
@@ -142,7 +145,7 @@ organizing over 800+ successful exhibitions for over a decade in all over pan In
                         <span class="section-subtitle">PROMOTIONS</span>
                         <h2>Driving strong visibility across print, broadcast, digital, and direct outreach.</h2>
                         <!-- <p>India Dairy Show is promoted through a focused multi-channel campaign designed to bring the right trade audience to the event.</p> -->
-                        
+
                         <div class="promo-spectrum-list">
                             <div class="promo-spectrum-row">
                                 <span class="promo-spectrum-index">01</span>
@@ -168,7 +171,8 @@ organizing over 800+ successful exhibitions for over a decade in all over pan In
                     </div>
 
                     <div class="promo-image-container">
-                        <img src="assets/promotions_media_dairy.png" alt="Multi-channel Marketing Campaign for India Dairy Show" class="promo-img-styled">
+                        <img src="assets/promotions_media_dairy.png"
+                            alt="Multi-channel Marketing Campaign for India Dairy Show" class="promo-img-styled">
                     </div>
                 </div>
             </div>
@@ -182,13 +186,14 @@ organizing over 800+ successful exhibitions for over a decade in all over pan In
                     <!-- <span class="section-subtitle">Key Visitors</span> -->
                     <h2>Connecting the <span class="text-blue">Dairy Ecosystem</span></h2>
                 </div>
-                
+
                 <div class="visitor-grid">
                     <div class="visitor-card">
                         <div class="visitor-icon"><i class="fas fa-tractor"></i></div>
                         <div class="visitor-info">
                             <h3>Dairy Farmers</h3>
-                            <p>Progressive farmers looking for the latest machinery, genetic technology, and cattle nutrition solutions to scale their operations.</p>
+                            <p>Progressive farmers looking for the latest machinery, genetic technology, and cattle
+                                nutrition solutions to scale their operations.</p>
                         </div>
                     </div>
 
@@ -196,7 +201,8 @@ organizing over 800+ successful exhibitions for over a decade in all over pan In
                         <div class="visitor-icon"><i class="fas fa-users-viewfinder"></i></div>
                         <div class="visitor-info">
                             <h3>Cooperative Societies</h3>
-                            <p>Decision-makers from dairy cooperatives seeking bulk processing solutions, cold chain infrastructure, and strategic partnerships.</p>
+                            <p>Decision-makers from dairy cooperatives seeking bulk processing solutions, cold chain
+                                infrastructure, and strategic partnerships.</p>
                         </div>
                     </div>
 
@@ -204,7 +210,8 @@ organizing over 800+ successful exhibitions for over a decade in all over pan In
                         <div class="visitor-icon"><i class="fas fa-industry"></i></div>
                         <div class="visitor-info">
                             <h3>Processors & Manufacturers</h3>
-                            <p>Owners and plant managers looking for advanced packaging machinery, quality testing equipment, and automation technology.</p>
+                            <p>Owners and plant managers looking for advanced packaging machinery, quality testing
+                                equipment, and automation technology.</p>
                         </div>
                     </div>
 
@@ -212,7 +219,8 @@ organizing over 800+ successful exhibitions for over a decade in all over pan In
                         <div class="visitor-icon"><i class="fas fa-truck-fast"></i></div>
                         <div class="visitor-info">
                             <h3>Distributors & Suppliers</h3>
-                            <p>Wholesalers and retail network partners looking for reliable dairy brands and distribution opportunities across ..</p>
+                            <p>Wholesalers and retail network partners looking for reliable dairy brands and
+                                distribution opportunities across ..</p>
                         </div>
                     </div>
                 </div>
@@ -223,9 +231,12 @@ organizing over 800+ successful exhibitions for over a decade in all over pan In
             <div class="container closing-brief-inner">
                 <div class="closing-brief-copy">
                     <span class="section-subtitle">Plan Your Presence</span>
-                    <h2>Be part of <span class="closing-brief-highlight">South India's key dairy business platform</span>.</h2>
-                    <p>India Dairy Show connects exhibitors, buyers, processors, farm leaders, and solution providers in one focused trade environment designed for visibility, partnerships, and long-term business growth.</p>
-                    
+                    <h2>Be part of <span class="closing-brief-highlight">South India's key dairy business
+                            platform</span>.</h2>
+                    <p>India Dairy Show connects exhibitors, buyers, processors, farm leaders, and solution providers in
+                        one focused trade environment designed for visibility, partnerships, and long-term business
+                        growth.</p>
+
                     <div class="closing-stats">
                         <div class="closing-stat-item">
                             <span class="stat-number" data-countup>800+</span>
@@ -251,7 +262,8 @@ organizing over 800+ successful exhibitions for over a decade in all over pan In
 
                     <div class="closing-brief-item">
                         <span class="closing-brief-label">Who Arrives</span>
-                        <strong>Farm owners, cooperatives, processors, distributors, suppliers, and solution providers.</strong>
+                        <strong>Farm owners, cooperatives, processors, distributors, suppliers, and solution
+                            providers.</strong>
                         <p>The audience is broad enough for visibility and specific enough for quality leads.</p>
                     </div>
 
@@ -290,20 +302,52 @@ organizing over 800+ successful exhibitions for over a decade in all over pan In
             </div>
             <div class="footer-office">
                 <h4>Head Office Address</h4>
-                <p>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi Hospital,<br>Pallikaranai, Chennai - 600 100, India.</p>
+                <p style="display: flex; gap: 0.75rem;">
+                    <i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-top: 5px;"></i>
+                    <span>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi
+                        Hospital,<br>Pallikaranai, Chennai - 600 100, India.</span>
+                </p>
             </div>
             <div class="footer-contact">
                 <h4>Contact Us</h4>
-                <p><strong>Phone:</strong> <a href="tel:+914442142483">+91 44 4214 2483</a></p>
-                <p><strong>Mobile:</strong></p>
-                <p style="margin-top: -10px;"><a href="tel:+919391391162">93913 91162</a></p>
-                <p style="margin-top: -10px;"><a href="tel:+919941008371">99410 08371</a></p>
-                <p><strong>Email:</strong> <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a><br><a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a></p>
+                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
+                    <i class="fas fa-phone-alt"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Phone:</strong>
+                        <a href="tel:+914442142483">+91 44 4214 2483</a>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
+                    <i class="fas fa-mobile-alt"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Mobile:</strong>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span><a href="tel:+919391391162">93913 91162</a> / <a href="tel:+919941008371">99410
+                                    08371</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 18px; align-items: flex-start;">
+                    <i class="fas fa-envelope"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 6px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Email:</strong>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                            <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a>
+                            <span style="color: rgba(255,255,255,0.2);">|</span>
+                            <a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Ocean Softwares</a></p>
+                <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a
+                        href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer"
+                        style="color: inherit; text-decoration: underline;">Ocean Softwares</a></p>
             </div>
         </div>
     </footer>

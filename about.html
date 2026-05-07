@@ -258,7 +258,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .organizer-info-side, .organizer-stats-side {
+            .organizer-info-side,
+            .organizer-stats-side {
                 padding: 60px 30px;
             }
 
@@ -292,7 +293,8 @@
                 margin: 3rem 0;
             }
 
-            .organizer-info-side, .organizer-stats-side {
+            .organizer-info-side,
+            .organizer-stats-side {
                 padding: 36px 20px;
             }
 
@@ -324,9 +326,30 @@
             <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active">About Us</a></li>
-                <li><a href="exhibitors.html">Exhibitor</a></li>
-                <li><a href="visitors.html">Visitors</a></li>
-                <li><a href="media.html">Media</a></li>
+                <li class="has-dropdown">
+                    <a href="#exhibitors.html">Exhibitor <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="why-exhibit.html">Why Exhibit</a></li>
+                        <li><a href="exhibit-profile.html">Exhibit Profile</a></li>
+                        <li><a href="event-brochure.html">Event Brochure</a></li>
+                        <li><a href="layout.html">Layout</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#visitors.html">Visitors <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="visitors.html">Visitor Profile</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#media.html">Media <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="event-photos.html">Event Photos</a></li>
+                        <li><a href="event-videos.html">Event Videos</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
             <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
@@ -341,7 +364,8 @@
         <section class="about-hero">
             <div class="container">
                 <h1>About Us</h1>
-                <p class="max-w-700">Prompt Trade Fairs India Private Limited proudly brings together the vision, experience, and industry focus behind India Dairy Show 2027.</p>
+                <p class="max-w-700">Prompt Trade Fairs India Private Limited proudly brings together the vision,
+                    experience, and industry focus behind India Dairy Show 2027.</p>
             </div>
         </section>
 
@@ -352,17 +376,35 @@
                     <div class="about-image-container">
                         <img src="assets/why_attend.png" alt="Traditional Indian Bull" class="about-img-styled">
                         <div class="organizer-brief-box">
-                            <p>We, <strong>Prompt Trade Fairs India Private Limited.</strong>, are the organizers of <strong>India Dairy Show 2027</strong>. We are the pioneers in the field of Exhibitions and had the experience of organizing over <strong>800+ successful exhibitions</strong> for over a decade in all over pan India.</p>
+                            <p>We, <strong>Prompt Trade Fairs India Private Limited.</strong>, are the organizers of
+                                <strong>India Dairy Show 2027</strong>. We are the pioneers in the field of Exhibitions
+                                and had the experience of organizing over <strong>800+ successful exhibitions</strong>
+                                for over a decade in all over pan India.</p>
                         </div>
                     </div>
                     <div class="about-content-styled">
                         <span class="section-subtitle">ABOUT US</span>
                         <h2>Prompt Trade Fairs India <span class="text-blue">Private Limited</span></h2>
-                        <p><strong>India Dairy Show 2027:</strong> India Dairy Show 1st Edition welcomes your interest for an unparalleled opportunity to collaborate, explore, and connect to the future of the dairy industry. The India Dairy Show 1st Edition assures to be the epicenter of dairy innovation, collaboration, and growth.</p>
-                        <p>India Dairy Show is rapidly emerging as one of the largest and most influential South India dairy summits, surpassing renowned events like the Tamil Nadu Cooperative Milk Producers Federation Limited (TCMPF) - AAVIN. While focusing on innovation, sustainability, and regional market trends, it stands out due to its sheer market size, consumption patterns, and rapid industry transformation.</p>
-                        <p>With India being the largest producer and consumer of dairy, the country's dairy sector is witnessing unprecedented growth, driven by urbanisation, rising disposable income, evolving consumer preferences, and a strong emphasis on health and nutrition.</p>
-                        <p>India Dairy Show is setting the stage for South Indian dairy leadership, offering insights, partnerships, and innovations that will shape the future of dairy worldwide. Expanding cold chain infrastructure, increasing private sector investments, and a growing appetite for value-added dairy products like ice creams, cheese, and sweets further strengthen India's position as the global dairy leader.</p>
-                        <p>Given that milk and dairy are an intrinsic part of Indian food culture, India Dairy Show will become the ultimate platform for industry leaders, innovators, and stakeholders, offering unmatched business opportunities and insights into the future of South Indian dairy.</p>
+                        <p><strong>India Dairy Show 2027:</strong> India Dairy Show 1st Edition welcomes your interest
+                            for an unparalleled opportunity to collaborate, explore, and connect to the future of the
+                            dairy industry. The India Dairy Show 1st Edition assures to be the epicenter of dairy
+                            innovation, collaboration, and growth.</p>
+                        <p>India Dairy Show is rapidly emerging as one of the largest and most influential South India
+                            dairy summits, surpassing renowned events like the Tamil Nadu Cooperative Milk Producers
+                            Federation Limited (TCMPF) - AAVIN. While focusing on innovation, sustainability, and
+                            regional market trends, it stands out due to its sheer market size, consumption patterns,
+                            and rapid industry transformation.</p>
+                        <p>With India being the largest producer and consumer of dairy, the country's dairy sector is
+                            witnessing unprecedented growth, driven by urbanisation, rising disposable income, evolving
+                            consumer preferences, and a strong emphasis on health and nutrition.</p>
+                        <p>India Dairy Show is setting the stage for South Indian dairy leadership, offering insights,
+                            partnerships, and innovations that will shape the future of dairy worldwide. Expanding cold
+                            chain infrastructure, increasing private sector investments, and a growing appetite for
+                            value-added dairy products like ice creams, cheese, and sweets further strengthen India's
+                            position as the global dairy leader.</p>
+                        <p>Given that milk and dairy are an intrinsic part of Indian food culture, India Dairy Show will
+                            become the ultimate platform for industry leaders, innovators, and stakeholders, offering
+                            unmatched business opportunities and insights into the future of South Indian dairy.</p>
                     </div>
                 </div>
             </div>
@@ -379,12 +421,15 @@
                     <div class="mv-card">
                         <div class="mv-icon"><i class="fas fa-crown"></i></div>
                         <h3>Market Leadership</h3>
-                        <p>India Dairy Show is setting the stage for South Indian dairy leadership, offering insights, partnerships, and innovations that will shape the future of dairy worldwide.</p>
+                        <p>India Dairy Show is setting the stage for South Indian dairy leadership, offering insights,
+                            partnerships, and innovations that will shape the future of dairy worldwide.</p>
                     </div>
                     <div class="mv-card">
                         <div class="mv-icon"><i class="fas fa-industry"></i></div>
                         <h3>Industry Growth</h3>
-                        <p>Expanding cold chain infrastructure, increasing private sector investments, and a growing appetite for value-added dairy products like ice creams, cheese, and sweets further strengthen India's position as the global dairy leader.</p>
+                        <p>Expanding cold chain infrastructure, increasing private sector investments, and a growing
+                            appetite for value-added dairy products like ice creams, cheese, and sweets further
+                            strengthen India's position as the global dairy leader.</p>
                     </div>
                 </div>
             </div>
@@ -397,7 +442,10 @@
                     <div class="organizer-info-side">
                         <span class="section-subtitle" style="color: var(--secondary);">THE ORGANIZERS</span>
                         <h2>Prompt Trade Fairs India <span class="text-white">Pvt. Ltd.</span></h2>
-                        <p style="opacity: 0.9; margin-bottom: 2rem;">We are pioneers in the field of exhibitions, with more than a decade of experience and over 800 successful exhibitions delivered across India. Our expertise helps every edition of India Dairy Show create stronger industry connections and real business opportunities.</p>
+                        <p style="opacity: 0.9; margin-bottom: 2rem;">We are pioneers in the field of exhibitions, with
+                            more than a decade of experience and over 800 successful exhibitions delivered across India.
+                            Our expertise helps every edition of India Dairy Show create stronger industry connections
+                            and real business opportunities.</p>
                     </div>
                     <div class="organizer-stats-side">
                         <div class="organizer-stats">
@@ -433,17 +481,20 @@
                     <div class="value-item">
                         <i class="fas fa-users"></i>
                         <h3>Collaborate</h3>
-                        <p>Unmatched business opportunities and insights into the future of South Indian dairy for industry leaders and stakeholders.</p>
+                        <p>Unmatched business opportunities and insights into the future of South Indian dairy for
+                            industry leaders and stakeholders.</p>
                     </div>
                     <div class="value-item">
                         <i class="fas fa-microchip"></i>
                         <h3>Innovate</h3>
-                        <p>Focusing on innovation and sustainability to meet evolving consumer preferences and the strong emphasis on health and nutrition.</p>
+                        <p>Focusing on innovation and sustainability to meet evolving consumer preferences and the
+                            strong emphasis on health and nutrition.</p>
                     </div>
                     <div class="value-item">
                         <i class="fas fa-globe"></i>
                         <h3>Lead</h3>
-                        <p>Surpassing renowned events to become the ultimate platform for the rapid transformation of the global dairy market.</p>
+                        <p>Surpassing renowned events to become the ultimate platform for the rapid transformation of
+                            the global dairy market.</p>
                     </div>
                 </div>
             </div>
@@ -475,16 +526,45 @@
             </div>
             <div class="footer-office">
                 <h4>Head Office Address</h4>
-                <p>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,Off Radial Road, Near Kamakshi Hospital,<br>Pallikaranai, Chennai - 600 100, India.</p>
+                <p style="display: flex; gap: 0.75rem;">
+                    <i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-top: 5px;"></i>
+                    <span>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi
+                        Hospital,<br>Pallikaranai, Chennai - 600 100, India.</span>
+                </p>
             </div>
             <div class="footer-contact">
                 <h4>Contact Us</h4>
-                <p><strong>Phone:</strong> <a href="tel:+914442142483">+91 44 4214 2483</a></p>
-                <p><strong>Mobile:</strong></p>
-                <p style="margin-top: -10px;"><a href="tel:+919391391162">93913 91162</a></p>
-                <p style="margin-top: -10px;"><a href="tel:+919941008371">99410 08371</a></p>
-                <p><strong>Email:</strong> <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a><br><a
-                        href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a></p>
+                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
+                    <i class="fas fa-phone-alt"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Phone:</strong>
+                        <a href="tel:+914442142483">+91 44 4214 2483</a>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
+                    <i class="fas fa-mobile-alt"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Mobile:</strong>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span><a href="tel:+919391391162">93913 91162</a> / <a href="tel:+919941008371">99410
+                                    08371</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 18px; align-items: flex-start;">
+                    <i class="fas fa-envelope"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 6px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Email:</strong>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                            <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a>
+                            <span style="color: rgba(255,255,255,0.2);">|</span>
+                            <a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">

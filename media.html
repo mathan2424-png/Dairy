@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Center | India Dairy Show 2027</title>
-    <meta name="description" content="Access the latest press releases, image galleries, and event videos from India Dairy Show 2027. Stay updated with the epicenter of dairy innovation.">
+    <meta name="description"
+        content="Access the latest press releases, image galleries, and event Event Videos from India Dairy Show 2027. Stay updated with the epicenter of dairy innovation.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
@@ -25,19 +28,22 @@
         }
 
         .media-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             color: var(--white);
             margin-bottom: 1rem;
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
             letter-spacing: -0.01em;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .media-hero p {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 700px;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.25rem;
+            max-width: 800px;
             margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .media-tabs-container {
@@ -81,8 +87,14 @@
         }
 
         .media-section {
-            padding: 100px 0;
-            scroll-margin-top: 140px;
+            padding: 80px 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .media-section.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
         }
 
         /* Gallery Section */
@@ -247,27 +259,31 @@
                 min-height: auto;
                 padding: 130px 0 80px;
             }
+
             .video-grid {
                 grid-template-columns: 1fr;
             }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
             .media-tabs-container {
                 padding: 1rem 0;
             }
+
             .tab-list {
+                flex-wrap: wrap;
+                justify-content: center;
                 gap: 0.75rem;
-                overflow-x: auto;
-                justify-content: flex-start;
                 padding: 0 1rem;
-                scrollbar-width: none;
             }
-            .tab-list::-webkit-scrollbar {
-                display: none;
-            }
+
             .tab-item {
                 padding: 0.6rem 1.4rem;
-                white-space: nowrap;
                 font-size: 0.85rem;
             }
+
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
@@ -286,12 +302,35 @@
             <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="exhibitors.html">Exhibitor</a></li>
-                <li><a href="visitors.html">Visitors</a></li>
-                <li><a href="media.html" class="active">Media</a></li>
+                <li class="has-dropdown">
+                    <a href="#exhibitors.html">Exhibitor <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="why-exhibit.html">Why Exhibit</a></li>
+                        <li><a href="exhibit-profile.html">Exhibit Profile</a></li>
+                        <li><a href="event-brochure.html">Event Brochure</a></li>
+                        <li><a href="layout.html">Layout</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#visitors.html">Visitors <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="visitors.html">Visitor Profile</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#media.html" class="active">Media <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="event-photos.html">Event Photos</a></li>
+                        <li><a href="event-videos.html">Event Videos</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
-            <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false">
+            <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
+                aria-controls="primary-navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
         </nav>
@@ -303,7 +342,8 @@
             <div class="container">
                 <span class="section-subtitle" style="color: #fcd34d;">LATEST NEWS & UPDATES</span>
                 <h1>Media Center</h1>
-                <p>Explore official highlights, event galleries, and a comprehensive visual journey of India Dairy Show 2027.</p>
+                <p>Explore official highlights, event galleries, and a comprehensive visual journey of India Dairy Show
+                    2027.</p>
             </div>
         </section>
 
@@ -311,14 +351,15 @@
         <div class="media-tabs-container">
             <div class="container">
                 <ul class="tab-list">
-                    <li class="tab-item active" onclick="scrollToSection('gallery')">Photo Gallery</li>
-                    <li class="tab-item" onclick="scrollToSection('videos')">Videos</li>
+                    <li class="tab-item active" onclick="filterMedia('all', this)">All Media</li>
+                    <li class="tab-item" onclick="filterMedia('photo', this)">Photo Gallery</li>
+                    <li class="tab-item" onclick="filterMedia('video', this)">Event Videos</li>
                 </ul>
             </div>
         </div>
 
         <!-- Photo Gallery -->
-        <section class="media-section" id="gallery">
+        <section class="media-section" id="gallery" data-type="photo">
             <div class="container">
                 <div class="text-center mb-50">
                     <span class="section-subtitle">Visual Highlights</span>
@@ -362,18 +403,18 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="assets/v_research.png" alt="Research Pavilion">
+                        <img src="assets/dairy_stall_modern.png" alt="Advanced Dairy Tech">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
-                            <span class="gallery-caption">Research & Innovation</span>
+                            <span class="gallery-caption">Advanced Dairy Technology</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Videos -->
-        <section class="media-section" id="videos" style="background: #f8fafc;">
+        <!-- Event Videos -->
+        <section class="media-section" id="Event Videos" data-type="video" style="background: #f8fafc;">
             <div class="container">
                 <div class="text-center mb-50">
                     <span class="section-subtitle">Motion Experience</span>
@@ -432,66 +473,106 @@
             </div>
             <div class="footer-office">
                 <h4>Head Office Address</h4>
-                <p>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi Hospital,<br>Pallikaranai, Chennai - 600 100, India.</p>
+                <p style="display: flex; gap: 0.75rem;">
+                    <i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-top: 5px;"></i>
+                    <span>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi
+                        Hospital,<br>Pallikaranai, Chennai - 600 100, India.</span>
+                </p>
             </div>
             <div class="footer-contact">
                 <h4>Contact Us</h4>
-                <p><strong>Phone:</strong> <a href="tel:+914442142483">+91 44 4214 2483</a></p>
-                <p><strong>Mobile:</strong></p>
-                <p style="margin-top: -10px;"><a href="tel:+919391391162">93913 91162</a></p>
-                <p style="margin-top: -10px;"><a href="tel:+919941008371">99410 08371</a></p>
-                <p><strong>Email:</strong> <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a><br><a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a></p>
+                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
+                    <i class="fas fa-phone-alt"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Phone:</strong>
+                        <a href="tel:+914442142483">+91 44 4214 2483</a>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
+                    <i class="fas fa-mobile-alt"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Mobile:</strong>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span><a href="tel:+919391391162">93913 91162</a> / <a href="tel:+919941008371">99410
+                                    08371</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 18px; align-items: flex-start;">
+                    <i class="fas fa-envelope"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 6px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Email:</strong>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                            <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a>
+                            <span style="color: rgba(255,255,255,0.2);">|</span>
+                            <a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Ocean Softwares</a></p>
+                <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a
+                        href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer"
+                        style="color: inherit; text-decoration: underline;">Ocean Softwares</a></p>
             </div>
         </div>
     </footer>
 
     <script src="site.js"></script>
     <script>
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
+        function filterMedia(type, element) {
+            const sections = document.querySelectorAll('.media-section');
+            const tabs = document.querySelectorAll('.tab-item');
+
+            // Update active tab
+            tabs.forEach(tab => tab.classList.remove('active'));
+
             if (element) {
-                const offset = 130;
-                const bodyRect = document.body.getBoundingClientRect().top;
-                const elementRect = element.getBoundingClientRect().top;
-                const elementPosition = elementRect - bodyRect;
-                const offsetPosition = elementPosition - offset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-
-                // Update active tab
-                document.querySelectorAll('.tab-item').forEach(tab => {
-                    tab.classList.remove('active');
-                    if (tab.textContent.toLowerCase().includes(id)) {
+                element.classList.add('active');
+            } else {
+                // Initial load or no element passed
+                tabs.forEach(tab => {
+                    if (tab.textContent.toLowerCase().includes(type) || (type === 'all' && tab.textContent.toLowerCase().includes('all'))) {
                         tab.classList.add('active');
                     }
                 });
             }
-        }
 
-        // Handle active state on scroll
-        window.addEventListener('scroll', () => {
-            const sections = ['gallery', 'videos'];
-            const scrollPos = window.scrollY + 150;
-
-            sections.forEach(id => {
-                const section = document.getElementById(id);
-                if (section && scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-                    document.querySelectorAll('.tab-item').forEach(tab => {
-                        tab.classList.remove('active');
-                        if (tab.textContent.toLowerCase().includes(id)) {
-                            tab.classList.add('active');
-                        }
-                    });
+            // Filter sections
+            sections.forEach(section => {
+                if (type === 'all' || section.dataset.type === type) {
+                    section.style.display = 'block';
+                    setTimeout(() => {
+                        section.classList.remove('hidden');
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        section.classList.add('hidden');
+                        section.style.display = 'none';
+                    }, 400);
                 }
             });
+        }
+
+        // Initialize view
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash;
+            if (hash === '#gallery') {
+                filterMedia('photo');
+            } else if (hash === '#Event Videos') {
+                filterMedia('video');
+            } else {
+                filterMedia('all');
+            }
         });
     </script>
 </body>

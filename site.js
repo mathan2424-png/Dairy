@@ -18,6 +18,12 @@
         header.classList.toggle('nav-open', isOpen);
         menuButton.setAttribute('aria-expanded', String(isOpen));
 
+        if (!isOpen) {
+            navigation.querySelectorAll('.has-dropdown.active').forEach(function (item) {
+                item.classList.remove('active');
+            });
+        }
+
         if (menuIcon) {
             menuIcon.classList.toggle('fa-bars', !isOpen);
             menuIcon.classList.toggle('fa-xmark', isOpen);
@@ -122,7 +128,27 @@
         });
 
         navigation.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', function () {
+            link.addEventListener('click', function (event) {
+                const parentLi = link.parentElement;
+                
+                if (isMobileViewport() && parentLi.classList.contains('has-dropdown')) {
+                    // Check if the click was on the link text (not children of the dropdown)
+                    if (event.target === link || link.contains(event.target)) {
+                        const dropdown = parentLi.querySelector('.dropdown');
+                        if (dropdown) {
+                            event.preventDefault();
+                            const shouldOpen = !parentLi.classList.contains('active');
+                            navigation.querySelectorAll('.has-dropdown.active').forEach(function (item) {
+                                if (item !== parentLi) {
+                                    item.classList.remove('active');
+                                }
+                            });
+                            parentLi.classList.toggle('active', shouldOpen);
+                            return;
+                        }
+                    }
+                }
+
                 if (isMobileViewport()) {
                     setMenuOpen(false);
                 }
@@ -179,6 +205,70 @@
                 top: Math.max(targetTop, 0),
                 behavior: 'smooth'
             });
+        });
+    });
+
+    // Lightbox & Video Modal Functionality
+    function createModal() {
+        const modal = document.createElement('div');
+        modal.className = 'media-modal';
+        modal.innerHTML = `
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+                <div class="modal-body"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        const closeBtn = modal.querySelector('.modal-close');
+        const overlay = modal.querySelector('.modal-overlay');
+
+        function closeModal() {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.querySelector('.modal-body').innerHTML = '';
+            }, 300);
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        return modal;
+    }
+
+    const mediaModal = createModal();
+    const modalBody = mediaModal.querySelector('.modal-body');
+
+    // Handle Gallery Clicks
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            const caption = item.querySelector('.gallery-caption')?.textContent || '';
+            
+            modalBody.innerHTML = `
+                <img src="${img.src}" alt="${img.alt}" class="modal-img">
+                <div class="modal-caption">${caption}</div>
+            `;
+            mediaModal.classList.add('active');
+        });
+    });
+
+    // Handle Video Clicks
+    document.querySelectorAll('.video-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const title = card.querySelector('h4')?.textContent || 'Event Video';
+            // Using a placeholder video for demonstration
+            modalBody.innerHTML = `
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="modal-caption">${title}</div>
+            `;
+            mediaModal.classList.add('active');
         });
     });
 

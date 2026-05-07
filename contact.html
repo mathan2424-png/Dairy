@@ -145,8 +145,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .contact-info-card {
@@ -358,9 +365,30 @@
             <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="exhibitors.html">Exhibitor</a></li>
-                <li><a href="visitors.html">Visitors</a></li>
-                <li><a href="media.html">Media</a></li>
+                <li class="has-dropdown">
+                    <a href="#exhibitors.html">Exhibitor <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="why-exhibit.html">Why Exhibit</a></li>
+                        <li><a href="exhibit-profile.html">Exhibit Profile</a></li>
+                        <li><a href="event-brochure.html">Event Brochure</a></li>
+                        <li><a href="layout.html">Layout</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#visitors.html">Visitors <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="visitors.html">Visitor Profile</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#media.html">Media <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="event-photos.html">Event Photos</a></li>
+                        <li><a href="event-videos.html">Event Videos</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact.html" class="active">Contact Us</a></li>
             </ul>
             <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
@@ -426,38 +454,65 @@
                                 <div>
                                     <h3>E-mail</h3>
                                     <p style="margin-bottom: 0.4rem;">
-                                        <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a><br>
+                                        <a
+                                            href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a><br>
                                         <a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a>
                                     </p>
-                                    <p style="font-size: 0.85rem; opacity: 0.75; font-weight: 500;">Official & General Enquiries</p>
+                                    <p style="font-size: 0.85rem; opacity: 0.75; font-weight: 500;">Official & General
+                                        Enquiries</p>
                                 </div>
                             </div>
-                        </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <h3>Working Hours</h3>
+                                    <p>Monday - Saturday: 10:00 AM - 6:30 PM<br>
+                                        <span style="opacity: 0.7; font-size: 0.9rem;">Closed on Sundays & Public
+                                            Holidays</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- <div class="contact-info-item">
+                                <div class="contact-info-icon"><i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                                </div>
+                                <div>
+                                    <h3>WhatsApp Connect</h3>
+                                    <p><a href="https://wa.me/919391391162">+91 93913 91162</a><br>
+                                        <span style="opacity: 0.7; font-size: 0.85rem;">Quick Response for
+                                            Bookings</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
                     </aside>
 
                     <!-- Right Side: Enquiry Form -->
                     <form class="premium-form contact-form-card" id="contact-form" novalidate>
                         <span class="section-subtitle">Enquiry Form</span>
-                        <h2>Let's start the conversation</h2>
+                        <h2>Start a Conversation</h2>
                         <p class="contact-form-intro">Fill in your details below.</p>
 
                         <div class="contact-form-grid">
                             <div class="form-group">
                                 <label for="contact-name">Name</label>
                                 <input id="contact-name" name="name" type="text" placeholder="Enter your name" required>
-                                <div class="error-message" id="error-name">Please enter a valid name (letters only).</div>
+                                <div class="error-message" id="error-name">Please enter a valid name (letters only).
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="contact-mobile">Mobile Number</label>
                                 <input id="contact-mobile" name="mobile" type="tel" inputmode="tel"
-                                    placeholder="Enter mobile number" required>
-                                <div class="error-message" id="error-mobile">Please enter a valid mobile number (digits only).</div>
+                                    placeholder="Enter 10 digit mobile number" required maxlength="10">
+                                <div class="error-message" id="error-mobile">Please enter a valid 10-digit mobile number.</div>
                             </div>
                             <div class="form-group">
                                 <label for="contact-email">Email Id</label>
                                 <input id="contact-email" name="email" type="email" placeholder="Enter email address"
                                     required>
-                                <div class="error-message" id="error-email">Please enter a valid @gmail.com address.</div>
+                                <div class="error-message" id="error-email">Please enter a valid @gmail.com address.
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="contact-company">Company Name</label>
@@ -507,17 +562,45 @@
             </div>
             <div class="footer-office">
                 <h4>Head Office Address</h4>
-                <p>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi
-                    Hospital,<br>Pallikaranai, Chennai - 600 100, India.</p>
+                <p style="display: flex; gap: 0.75rem;">
+                    <i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-top: 5px;"></i>
+                    <span>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road, Near Kamakshi
+                        Hospital,<br>Pallikaranai, Chennai - 600 100, India.</span>
+                </p>
             </div>
             <div class="footer-contact">
                 <h4>Contact Us</h4>
-                <p><strong>Phone:</strong> <a href="tel:+914442142483">+91 44 4214 2483</a></p>
-                <p><strong>Mobile:</strong></p>
-                <p style="margin-top: -10px;"><a href="tel:+919391391162">93913 91162</a></p>
-                <p style="margin-top: -10px;"><a href="tel:+919941008371">99410 08371</a></p>
-                <p><strong>Email:</strong> <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a><br><a
-                        href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a></p>
+                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
+                    <i class="fas fa-phone-alt"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Phone:</strong>
+                        <a href="tel:+914442142483">+91 44 4214 2483</a>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem;">
+                    <i class="fas fa-mobile-alt"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 4px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Mobile:</strong>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span><a href="tel:+919391391162">93913 91162</a> / <a href="tel:+919941008371">99410
+                                    08371</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 18px; align-items: flex-start;">
+                    <i class="fas fa-envelope"
+                        style="color: var(--secondary); width: 20px; text-align: center; margin-top: 6px;"></i>
+                    <div style="display: flex; gap: 6px;">
+                        <strong style="min-width: 60px;">Email:</strong>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                            <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a>
+                            <span style="color: rgba(255,255,255,0.2);">|</span>
+                            <a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -533,7 +616,7 @@
     <script>
         document.getElementById('contact-form').addEventListener('submit', function (event) {
             event.preventDefault();
-            
+
             const form = this;
             const nameInput = document.getElementById('contact-name');
             const mobileInput = document.getElementById('contact-mobile');
@@ -541,12 +624,13 @@
             const companyInput = document.getElementById('contact-company');
             const messageInput = document.getElementById('contact-message');
             const feedback = document.getElementById('contact-form-feedback');
-            
+
             // Validation patterns
             const stringPattern = /^[a-zA-Z\s]+$/;
-            const mobilePattern = /^\d+$/;
+            const companyPattern = /^[a-zA-Z0-9\s&.,'-]+$/;
+            const mobilePattern = /^\d{10}$/;
             const gmailPattern = /@gmail\.com$/;
-            
+
             let isValid = true;
 
             function showError(input, errorId, show) {
@@ -558,27 +642,26 @@
                     group.classList.remove('has-error');
                 }
             }
-            
+
             // Name validation
             showError(nameInput, 'error-name', !stringPattern.test(nameInput.value.trim()));
-            
+
             // Mobile validation
             showError(mobileInput, 'error-mobile', !mobilePattern.test(mobileInput.value.trim()));
-            
+
             // Email validation
             showError(emailInput, 'error-email', !gmailPattern.test(emailInput.value.trim().toLowerCase()));
-            
+
             // Company validation
-            showError(companyInput, 'error-company', !stringPattern.test(companyInput.value.trim()));
+            showError(companyInput, 'error-company', !companyPattern.test(companyInput.value.trim()));
 
             // Message validation
             showError(messageInput, 'error-message-field', messageInput.value.trim() === '');
-            
+
             if (!isValid) {
-                feedback.innerHTML = `<span style="color: #ef4444; display: block; margin-top: 1rem; font-weight: 600;">Please fix the errors above.</span>`;
                 return;
             }
-            
+
             // If all valid, prepare email
             const formData = new FormData(form);
             const companyName = formData.get('company');
@@ -595,9 +678,9 @@
             const body = encodeURIComponent(bodyLines.join('\n'));
 
             feedback.innerHTML = '<span style="color: #059669; display: block; margin-top: 1rem; font-weight: 600;">Message valid! Opening your email client...</span>';
-            
+
             window.location.href = 'mailto:project2@prompttradefairs.com,prompttradefairs@gmail.com?subject=' + subject + '&body=' + body;
-            
+
             setTimeout(() => {
                 form.reset();
                 feedback.innerHTML = '<span style="color: #059669; display: block; margin-top: 1rem; font-weight: 600;">Message sent successfully via email client.</span>';
@@ -607,16 +690,16 @@
         });
 
         // Real-time input filtering
-        document.getElementById('contact-mobile').addEventListener('input', function(e) {
-            this.value = this.value.replace(/[^\d]/g, '');
+        document.getElementById('contact-mobile').addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^\d]/g, '').slice(0, 10);
         });
 
-        document.getElementById('contact-name').addEventListener('input', function(e) {
+        document.getElementById('contact-name').addEventListener('input', function (e) {
             this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
         });
 
-        document.getElementById('contact-company').addEventListener('input', function(e) {
-            this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        document.getElementById('contact-company').addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^a-zA-Z0-9\s&.,'-]/g, '');
         });
     </script>
 </body>
