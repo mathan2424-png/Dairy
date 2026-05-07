@@ -13,7 +13,6 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="boss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
 </head>
@@ -22,21 +21,36 @@
     <header id="main-header">
         <nav class="container">
             <div class="logo">
-                <img src="boss_logo_red_1778152583202.png" alt="BOSS" class="nav-logo">
+                <img src="assets/logo.png" alt="India Dairy Show 2027" class="nav-logo">
             </div>
             <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="why-exhibit.html">Why Join Us</a></li>
                 <li class="has-dropdown">
-                    <a href="#gallery">Gallery <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <a href="#exhibitors.html">Exhibitor <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
                     <ul class="dropdown">
-                        <li><a href="event-photos.html">Photos</a></li>
-                        <li><a href="event-videos.html">Videos</a></li>
+                        <li><a href="why-exhibit.html">Why Exhibit</a></li>
+                        <li><a href="exhibit-profile.html">Exhibit Profile</a></li>
+                        <li><a href="event-brochure.html">Event Brochure</a></li>
+                        <li><a href="layout.html">Layout</a></li>
                     </ul>
                 </li>
-                <li><a href="exhibitors.html">Boss Leaders</a></li>
-                <li><a href="exhibit-profile.html">Chapters</a></li>
+                <li class="has-dropdown">
+                    <a href="#visitors.html">Visitors <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="visitors.html">Visitor Profile</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#media.html">Media <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="event-photos.html">Event Photos</a></li>
+                        <li><a href="event-videos.html">Event Videos</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
             <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
@@ -52,14 +66,12 @@
             <div class="hero-overlay"></div>
             <div class="container">
                 <div class="hero-content">
-                    <span class="hero-subtitle">BUSINESS OWNERS SYNERGY FOR SUCCESS</span>
-                    <h1>BOSS THE FUTURE</h1>
-                    <div class="hero-tagline">
-                        <span>Connect</span> <span>Contribute</span> <span>Succeed</span>
-                    </div>
-                    <a href="#booking" class="btn-boss">
-                        Join Now <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="hero-dates">28, 29, 30 JANUARY 2027</div>
+                    <h1>
+                        <span class="hero-title-lead">The Future of</span>
+                        <span class="gradient-text">Dairy Innovation</span>
+                    </h1>
+                    <p class="hero-location">CODISSIA TRADE FAIR COMPLEX | COIMBATORE, TAMIL NADU, INDIA</p>
                 </div>
             </div>
         </section>
@@ -329,7 +341,8 @@
                         </div>
                     </div>
                 </div>
-                <div style="display: flex; gap: 18px; align-items: flex-start;">
+                <div
+                    style="display: flex; gap: 18px; align-items: flex-start;position: relative;left: 1px;position: relative;left: 1px;">
                     <i class="fas fa-envelope"
                         style="color: var(--secondary); width: 20px; text-align: center; margin-top: 6px;"></i>
                     <div style="display: flex; gap: 6px;">
