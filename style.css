@@ -2045,7 +2045,6 @@ h2 {
     color: #475569;
     font-size: 0.92rem;
     line-height: 1.8;
-    text-align: justify;
 }
 
 .footer-info-content a:hover {
@@ -3512,8 +3511,13 @@ h2 {
 
 /* Split Guidelines Section */
 .guidelines-section {
-    padding: 80px 0;
-    background: #f8fafc;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-bg-section {
+    color: white;
 }
 
 .guidelines-split-wrapper {
@@ -3537,6 +3541,33 @@ h2 {
     box-shadow: 0 40px 80px -15px rgba(15, 23, 42, 0.08);
     border: 1px solid #e2e8f0;
     transition: transform 0.3s ease;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: white !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3) !important;
+}
+
+.glass-card h3, .glass-card h4, .glass-card p, .glass-card span {
+    color: white !important;
+}
+
+.glass-card .service-icon-box {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #60a5fa !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card .guideline-sticky-list li {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.glass-card .guideline-sticky-list li strong {
+    color: #60a5fa !important;
 }
 
 .guideline-sticky-card h3 {
@@ -3602,6 +3633,48 @@ h2 {
     gap: 2.5rem;
 }
 
+/* Guidelines Instruction Section */
+.guidelines-instruction-section {
+    padding: 60px 0 30px;
+    background: white;
+}
+
+.instruction-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 2.5rem;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+}
+
+.instruction-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(37, 99, 235, 0.2);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #60a5fa;
+}
+
+.instruction-banner h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.payment-terms-section {
+    padding: 40px 0 100px;
+    background: white;
+}
+
 .service-feature-card {
     background: #f8fafc;
     padding: 1.25rem 1.75rem;
@@ -3661,15 +3734,15 @@ h2 {
 }
 
 .payment-terms-banner {
-    margin-top: 3rem;
-    background: white;
-    border-radius: 20px;
-    padding: 2.5rem;
+    margin-top: 0;
+    background: #f8fafc;
+    border-radius: 30px;
+    padding: 4rem;
     border: 1px solid #e2e8f0;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.05);
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .payment-header {
@@ -3694,7 +3767,7 @@ h2 {
 }
 
 .phase-card {
-    background: #f8fafc;
+    background: #e8eaeb;
     padding: 1.5rem;
     border-radius: 18px;
     border: 1px solid #e2e8f0;
@@ -3912,12 +3985,12 @@ h2 {
 /* Video Section */
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
 }
 
 .video-card {
-    border-radius: 32px;
+    border-radius: 24px;
     overflow: hidden;
     background: var(--white);
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
@@ -3952,8 +4025,8 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(12px);
     border: 2px solid rgba(255, 255, 255, 0.4);
@@ -3962,7 +4035,7 @@ h2 {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 2;
 }
@@ -3974,16 +4047,16 @@ h2 {
 }
 
 .video-info {
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
 }
 
 .video-info h4 {
     font-family: 'Outfit', sans-serif;
     color: var(--primary);
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .video-info p {
