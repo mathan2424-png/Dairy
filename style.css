@@ -14,7 +14,7 @@
     --glass-border: rgba(255, 255, 255, 0.3);
     --primary-blue: #0056B3;
     --primary-green: #10B981;
-    --container-width: 1200px;
+    --container-width: 1400px;
     --transition: all 0.3s ease;
 }
 
@@ -120,7 +120,7 @@ img {
     width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
 
 .section-padding {
@@ -131,16 +131,12 @@ img {
     text-align: center;
 }
 
-.text-blue {
-    color: var(--secondary);
-}
-
 .text-green {
     color: var(--accent);
 }
 
 .text-white {
-    color: var(--white);
+    color: var(--white) !important;
 }
 
 .text-gray {
@@ -248,6 +244,12 @@ header.scrolled .nav-logo {
     display: flex;
     align-items: center;
     gap: 2.5rem;
+}
+
+@media (max-width: 1366px) {
+    .nav-links {
+        gap: 1.5rem;
+    }
 }
 
 .nav-links > li {
@@ -363,7 +365,7 @@ header.scrolled .nav-logo {
 /* Hero Section */
 #hero {
     height: 85vh;
-    min-height: 650px;
+    min-height: 550px;
     background: url('assets/bg.png') no-repeat center center/cover;
     position: relative;
     display: flex;
@@ -561,7 +563,7 @@ header.scrolled .nav-logo {
 /* Video Section */
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
@@ -702,8 +704,9 @@ header.scrolled .nav-logo {
 .modal-content {
     position: relative;
     z-index: 10;
-    max-width: 90%;
-    max-height: 90%;
+    width: 95%;
+    max-width: 1100px;
+    max-height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -712,7 +715,7 @@ header.scrolled .nav-logo {
 }
 
 .media-modal.active .modal-content {
-    transform: scale(1);
+    transform: scale(1) translateY(-30px);
 }
 
 .modal-close {
@@ -742,7 +745,7 @@ header.scrolled .nav-logo {
 
 .modal-img {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 60vh;
     border-radius: 12px;
     box-shadow: 0 25px 50px rgba(0,0,0,0.5);
     object-fit: contain;
@@ -750,12 +753,12 @@ header.scrolled .nav-logo {
 
 .video-container {
     width: 100%;
+    max-width: 960px;
     aspect-ratio: 16/9;
     background: black;
-    border-radius: 16px;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-    max-width: 1000px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.8);
 }
 
 .video-container iframe {
@@ -1360,7 +1363,7 @@ h2 {
 
 .why-attend-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -1401,6 +1404,13 @@ h2 {
     font-size: 0.85rem;
     line-height: 1.5;
     opacity: 0.85;
+}
+
+@media (max-width: 1200px) {
+    .why-attend-grid, .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 992px) {
@@ -1678,6 +1688,11 @@ h2 {
 .premium-form h3 {
     margin-bottom: 2rem;
     text-align: center;
+}
+
+.required {
+    color: #ef4444;
+    margin-left: 2px;
 }
 
 .form-group {
@@ -2653,7 +2668,7 @@ h2 {
 .visitor-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
     margin-top: 4rem;
 }
 
@@ -3246,7 +3261,7 @@ h2 {
 
 .layout-section {
     background: var(--white);
-    padding: 10px 0;
+    padding: 21px 0;
 }
 
 .layout-container {
@@ -3634,7 +3649,7 @@ h2 {
 .services-scroll-side {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2.9rem;
 }
 
 /* Guidelines Instruction Section */
@@ -3675,7 +3690,7 @@ h2 {
 }
 
 .payment-terms-section {
-    padding: 40px 0 100px;
+    padding: 40px 0 50px;
     background: white;
 }
 

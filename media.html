@@ -60,6 +60,7 @@
             color: white;
             background: var(--primary);
             box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+            border-color: var(--primary);
         }
 
         .media-section {
@@ -293,7 +294,7 @@
                     </ul>
                 </li>
                 <li class="has-dropdown">
-                    <a href="#media.html" class="active">Media <i class="fas fa-chevron-down"
+                    <a href="media.html" class="active">Media <i class="fas fa-chevron-down"
                             style="font-size: 0.7rem; margin-left: 3px;"></i></a>
                     <ul class="dropdown">
                         <li><a href="event-photos.html">Event Photos</a></li>
@@ -387,7 +388,7 @@
         </section>
 
         <!-- Event Videos -->
-        <section class="media-section" id="Event Videos" data-type="video" style="background: #f8fafc;">
+        <section class="media-section" id="videos" data-type="video" style="background: #f8fafc;">
             <div class="container">
                 <div class="text-center mb-50">
                     <span class="section-subtitle">Motion Experience</span>
@@ -397,23 +398,34 @@
                 <div class="video-grid">
                     <div class="video-card">
                         <div class="video-thumb">
-                            <img src="assets/visitors_banner.png" alt="IDS 2027 Promo">
+                            <img src="assets/visitors_banner.png" alt="IDS 2027 Highlights">
                             <div class="play-btn"><i class="fas fa-play"></i></div>
                         </div>
                         <div class="video-info">
-                            <h4>Official Promo Video</h4>
-                            <p>An overview of what to expect at India Dairy Show 2027.</p>
+                            <h4>Experience India Dairy Show 2027</h4>
+                            <p>A comprehensive look at South India's largest dairy expo highlights.</p>
                         </div>
                     </div>
 
                     <div class="video-card">
                         <div class="video-thumb">
-                            <img src="assets/prime_expo_networking.png" alt="Expert Talk">
+                            <img src="assets/prime_expo_networking.png" alt="Dairy Technologies">
                             <div class="play-btn"><i class="fas fa-play"></i></div>
                         </div>
                         <div class="video-info">
-                            <h4>Expert Interviews</h4>
-                            <p>Industry leaders sharing insights on dairy automation.</p>
+                            <h4>Innovative Dairy Technologies</h4>
+                            <p>Showcasing the latest automation and research in dairy farming.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-thumb">
+                            <img src="assets/presence_new_bg.png" alt="Future of Farming">
+                            <div class="play-btn"><i class="fas fa-play"></i></div>
+                        </div>
+                        <div class="video-info">
+                            <h4>The Future of Dairy Farming</h4>
+                            <p>Expert insights and key discussions from industry leaders.</p>
                         </div>
                     </div>
                 </div>
@@ -429,46 +441,52 @@
             const sections = document.querySelectorAll('.media-section');
             const tabs = document.querySelectorAll('.tab-item');
 
-            // Update active tab
+            // 1. Clear all active states
             tabs.forEach(tab => tab.classList.remove('active'));
 
+            // 2. Handle active tab state
             if (element) {
                 element.classList.add('active');
             } else {
-                // Initial load or no element passed
-                tabs.forEach(tab => {
-                    if (tab.textContent.toLowerCase().includes(type) || (type === 'all' && tab.textContent.toLowerCase().includes('all'))) {
-                        tab.classList.add('active');
-                    }
+                // If no element, find by type (for initial load/hash)
+                const targetTab = Array.from(tabs).find(tab => {
+                    const onclickStr = tab.getAttribute('onclick') || '';
+                    return onclickStr.includes(`'${type}'`);
                 });
+                if (targetTab) targetTab.classList.add('active');
             }
 
-            // Filter sections
+            // 3. Handle section visibility with exclusivity
             sections.forEach(section => {
-                if (type === 'all' || section.dataset.type === type) {
+                const shouldShow = (type === 'all' || section.dataset.type === type);
+                
+                if (shouldShow) {
                     section.style.display = 'block';
-                    setTimeout(() => {
-                        section.classList.remove('hidden');
-                        section.style.opacity = '1';
-                        section.style.transform = 'translateY(0)';
-                    }, 10);
+                    // Force reflow
+                    section.offsetHeight;
+                    section.classList.remove('hidden');
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
                 } else {
                     section.style.opacity = '0';
                     section.style.transform = 'translateY(20px)';
                     setTimeout(() => {
-                        section.classList.add('hidden');
-                        section.style.display = 'none';
+                        // Check if it's still supposed to be hidden
+                        if (section.style.opacity === '0') {
+                            section.classList.add('hidden');
+                            section.style.display = 'none';
+                        }
                     }, 400);
                 }
             });
         }
 
-        // Initialize view
+        // Initialize view based on hash or default
         document.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash;
-            if (hash === '#gallery') {
+            if (hash === '#gallery' || hash === '#photo') {
                 filterMedia('photo');
-            } else if (hash === '#Event Videos') {
+            } else if (hash === '#videos' || hash === '#video') {
                 filterMedia('video');
             } else {
                 filterMedia('all');

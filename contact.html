@@ -16,16 +16,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
     <style>
-        
-
         .contact-hero-copy {
             max-width: 850px;
             margin: 0 auto;
         }
 
-        
 
-        
+
+
 
         .contact-section {
             padding-top: 105px;
@@ -274,7 +272,7 @@
         }
 
         @media (max-width: 768px) {
-            
+
 
             .contact-hero-copy {
                 max-width: none;
@@ -310,9 +308,9 @@
         }
 
         @media (max-width: 480px) {
-            
 
-            
+
+
 
             .contact-form-card,
             .contact-info-card {
@@ -377,7 +375,8 @@
     </header>
 
     <main>
-        <section class="page-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.45)), url(assets/presence_new_bg.png) no-repeat center center / cover;">
+        <section class="page-hero"
+            style="background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.45)), url(assets/presence_new_bg.png) no-repeat center center / cover;">
             <div class="container">
                 <div class="contact-hero-copy">
                     <h1>Contact Us</h1>
@@ -401,7 +400,8 @@
                                 <div class="contact-info-icon"><i class="fas fa-location-dot"></i></div>
                                 <div>
                                     <h3>Head Office Address</h3>
-                                    <p>Prompt Tower, Plot No: 324, Ram Nagar South 12th Extension,<br>Off Radial Road,
+                                    <p>Prompt Tower, Plot No: 324, Ram Nagar South Extension 12th Street,Off Radial
+                                        Road,
                                         Near Kamakshi Hospital,<br>Pallikaranai, Chennai - 600 100, India.</p>
                                 </div>
                             </div>
@@ -419,9 +419,9 @@
                                 <div>
                                     <h3>Mobile</h3>
                                     <div class="contact-inline-links">
-                                        <a href="tel:+919391391162">93913 91162</a>
+                                        <a href="tel:+919391391162">+91 93913 91162</a>
                                         <span>/</span>
-                                        <a href="tel:+919941008371">99410 08371</a>
+                                        <a href="tel:+919941008371">+91 99410 08371</a>
                                     </div>
                                 </div>
                             </div>
@@ -473,33 +473,33 @@
 
                         <div class="contact-form-grid">
                             <div class="form-group">
-                                <label for="contact-name">Name</label>
+                                <label for="contact-name">Name <span class="required">*</span></label>
                                 <input id="contact-name" name="name" type="text" placeholder="Enter your name" required>
                                 <div class="error-message" id="error-name">Please enter a valid name (letters only).
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="contact-mobile">Mobile Number</label>
+                                <label for="contact-mobile">Mobile Number <span class="required">*</span></label>
                                 <input id="contact-mobile" name="mobile" type="tel" inputmode="tel"
                                     placeholder="Enter 10 digit mobile number" required maxlength="10">
                                 <div class="error-message" id="error-mobile">Please enter a valid 10-digit mobile
                                     number.</div>
                             </div>
                             <div class="form-group">
-                                <label for="contact-email">Email Id</label>
+                                <label for="contact-email">Email Id <span class="required">*</span></label>
                                 <input id="contact-email" name="email" type="email" placeholder="Enter email address"
                                     required>
                                 <div class="error-message" id="error-email">Please enter a valid @gmail.com address.
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="contact-company">Company Name</label>
+                                <label for="contact-company">Company Name <span class="required">*</span></label>
                                 <input id="contact-company" name="company" type="text" placeholder="Enter company name"
                                     required>
-                                <div class="error-message" id="error-company">Please enter a valid company name.</div>
+                                <div class="error-message" id="error-company">Please enter your company name.</div>
                             </div>
                             <div class="form-group form-group-full">
-                                <label for="contact-message">Message</label>
+                                <label for="contact-message">Message <span class="required">*</span></label>
                                 <textarea id="contact-message" name="message" placeholder="Tell us about your enquiry"
                                     required></textarea>
                                 <div class="error-message" id="error-message-field">Please enter your message.</div>
@@ -531,7 +531,7 @@
             const feedback = document.getElementById('contact-form-feedback');
 
             // Validation patterns
-            const stringPattern = /^[a-zA-Z\s]+$/;
+            const stringPattern = /^[a-zA-Z\s.]+$/;
             const companyPattern = /^[a-zA-Z0-9\s&.,'-]+$/;
             const mobilePattern = /^\d{10}$/;
             const gmailPattern = /@gmail\.com$/;
@@ -558,7 +558,7 @@
             showError(emailInput, 'error-email', !gmailPattern.test(emailInput.value.trim().toLowerCase()));
 
             // Company validation
-            showError(companyInput, 'error-company', !companyPattern.test(companyInput.value.trim()));
+            showError(companyInput, 'error-company', companyInput.value.trim() === '');
 
             // Message validation
             showError(messageInput, 'error-message-field', messageInput.value.trim() === '');
@@ -600,11 +600,7 @@
         });
 
         document.getElementById('contact-name').addEventListener('input', function (e) {
-            this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
-        });
-
-        document.getElementById('contact-company').addEventListener('input', function (e) {
-            this.value = this.value.replace(/[^a-zA-Z0-9\s&.,'-]/g, '');
+            this.value = this.value.replace(/[^a-zA-Z\s.]/g, '');
         });
     </script>
 </body>
