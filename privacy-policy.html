@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | India Dairy Show 2027</title>
+    <meta name="description"
+        content="Read the official Privacy Policy of Prompt Trade Fairs India Private Limited for the India Dairy Show 2027. Learn how we handle your personal data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
+    
+    <style>
+        .privacy-card {
+            background: #ffffff;
+            padding: 3.5rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+            border: 1px solid #e2e8f0;
+            max-width: 950px;
+            margin: 4rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .privacy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--secondary) 0%, #60a5fa 100%);
+        }
+
+        .terms-section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 0.75rem;
+        }
+
+        .terms-number-badge {
+            width: 40px;
+            height: 40px;
+            background: rgba(37, 99, 235, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .privacy-card:hover .terms-number-badge {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .terms-subsection {
+            margin-bottom: 1.5rem;
+            padding-left: 1.25rem;
+            border-left: 3px solid #e2e8f0;
+            transition: border-color 0.3s ease;
+        }
+
+        .terms-subsection:hover {
+            border-color: var(--secondary);
+        }
+
+        .terms-subsection h4 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .terms-subsection p {
+            color: var(--text-main);
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        .bullet-list {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            list-style-type: none;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+            font-size: 0.96rem;
+            line-height: 1.6;
+        }
+
+        .bullet-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--secondary);
+            font-size: 0.85rem;
+        }
+
+        .warning-notice-box {
+            background: #fffdf5;
+            border-left: 4px solid #f59e0b;
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.05);
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .warning-icon {
+            color: #d97706;
+            font-size: 1.25rem;
+            margin-top: 2px;
+        }
+
+        .warning-text h5 {
+            color: #92400e;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .warning-text p {
+            color: #78350f;
+            font-size: 0.92rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method-card {
+            background: #f8fafc;
+            padding: 1.75rem;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .contact-method-card:hover {
+            transform: translateY(-8px);
+            background: #ffffff;
+            border-color: var(--secondary);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.08);
+        }
+
+        .contact-method-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(37, 99, 235, 0.06);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            transition: all 0.4s ease;
+        }
+
+        .contact-method-card:hover .contact-method-icon {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .contact-method-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method-value {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-method-card:hover .contact-method-value {
+            color: var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .privacy-card {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1rem;
+                border-radius: 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="India Dairy Show 2027" class="nav-logo">
+                </a>
+            </div>
+            <ul class="nav-links" id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="has-dropdown">
+                    <a href="#exhibitors.html">Exhibitor <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="why-exhibit.html">Why Exhibit</a></li>
+                        <li><a href="exhibit-profile.html">Exhibit Profile</a></li>
+                        <li><a href="event-brochure.html">Event Brochure</a></li>
+                        <li><a href="layout.html">Layout</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#visitors.html">Visitors <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="visitors.html">Visitor Profile</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#media.html">Media <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="event-photos.html">Event Photos</a></li>
+                        <li><a href="event-videos.html">Event Videos</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
+                aria-controls="primary-navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.45)), url(assets/presence_new_bg.png) no-repeat center center / cover;">
+            <div class="container">
+                <div class="hero-content" style="transform: none; padding-bottom: 0;">
+                    <h1>Privacy <span class="gradient-text">Policy</span></h1>
+                    <p>Prompt Trade Fairs India Private Limited – Data Protection Guidelines</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms Content Section -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="privacy-card">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <span class="section-subtitle">PROMPT TRADE FAIRS INDIA PRIVATE LIMITED</span>
+                        <h2 style="font-size: 2rem; color: var(--primary); font-family: 'Outfit', sans-serif;">Privacy Policy</h2>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                            Effective Date: May 20, 2026
+                        </p>
+                    </div>
+
+                    <!-- 1. Introduction -->
+                    <div>
+                        <div class="terms-section-title" id="section-1">
+                            <div class="terms-number-badge">1</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Introduction</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p style="margin-bottom: 1rem;">
+                                Prompt Trade Fairs India Private Limited (“Company”, “we”, “our”, or “us”) is committed to protecting the privacy and confidentiality of personal information collected from attendees, exhibitors, sponsors, partners, and other participants (“Participants”) in connection with our trade fairs, exhibitions, conferences, and related events (“Events”).
+                            </p>
+                            <p style="margin-bottom: 1rem;">
+                                This Privacy Policy describes the manner in which we collect, use, store, process, disclose, and protect personal information in accordance with applicable laws and regulations.
+                            </p>
+                            <p style="margin-bottom: 0;">
+                                By registering for, attending, participating in, or otherwise engaging with our Events, you acknowledge that you have read, understood, and agreed to the terms of this Privacy Policy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Information We Collect -->
+                    <div>
+                        <div class="terms-section-title" id="section-2">
+                            <div class="terms-number-badge">2</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Information We Collect</h3>
+                        </div>
+
+                        <!-- 2.1 Personal Information -->
+                        <div class="terms-subsection">
+                            <h4>2.1 Personal Information</h4>
+                            <p>We may collect and process the following categories of personal information:</p>
+                            <ul class="bullet-list">
+                                <li>Full name</li>
+                                <li>Mobile number</li>
+                                <li>Email address</li>
+                                <li>Residential or business address</li>
+                                <li>Company/organization name</li>
+                                <li>Designation or professional title</li>
+                                <li>Identification details provided during registration</li>
+                                <li>Photographs, audio recordings, and video recordings captured during the Event</li>
+                            </ul>
+                        </div>
+
+                        <!-- 2.2 Event-Related Information -->
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <h4>2.2 Event-Related Information</h4>
+                            <p>We may additionally collect:</p>
+                            <ul class="bullet-list">
+                                <li>Booth allocation and exhibitor details</li>
+                                <li>Session attendance records</li>
+                                <li>Visitor interactions and networking preferences</li>
+                                <li>Event participation history</li>
+                                <li>Feedback, surveys, and responses</li>
+                                <li>Website and digital engagement data</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 3. Methods of Collection -->
+                    <div>
+                        <div class="terms-section-title" id="section-3">
+                            <div class="terms-number-badge">3</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Methods of Collection</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p>The Company may collect information through the following means:</p>
+                            <ul class="bullet-list">
+                                <li>Direct registration forms (online or offline)</li>
+                                <li>Event entry badges and scanning systems</li>
+                                <li>Communication via email, telephone, or website</li>
+                                <li>Interactions with exhibitors, sponsors, or partners</li>
+                                <li>CCTV systems and event photography/videography</li>
+                                <li>Digital platforms, mobile applications, and social media channels associated with the Event</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 4. Purpose of Processing Information -->
+                    <div>
+                        <div class="terms-section-title" id="section-4">
+                            <div class="terms-number-badge">4</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Purpose of Processing Information</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p>The personal information collected may be used for the following lawful purposes:</p>
+                            <ul class="bullet-list">
+                                <li>Event registration, verification, and administration</li>
+                                <li>Communication relating to Event schedules, updates, and services</li>
+                                <li>Facilitating networking opportunities between Participants</li>
+                                <li>Managing exhibitor and sponsor relationships</li>
+                                <li>Providing customer support and responding to inquiries</li>
+                                <li>Conducting analytics, research, and improving Event experiences</li>
+                                <li>Marketing, promotional, and advertising activities</li>
+                                <li>Sending newsletters, future Event invitations, and business communications</li>
+                                <li>Compliance with legal and regulatory obligations</li>
+                                <li>Ensuring safety, security, and fraud prevention</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 5. Disclosure and Sharing of Information -->
+                    <div>
+                        <div class="terms-section-title" id="section-5">
+                            <div class="terms-number-badge">5</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Disclosure and Sharing of Information</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p>We may disclose or share personal information with:</p>
+                            <ul class="bullet-list">
+                                <li>Exhibitors, sponsors, business partners, and affiliates for legitimate business and networking purposes</li>
+                                <li>Third-party service providers assisting in Event management, logistics, payment processing, marketing, IT support, or security</li>
+                                <li>Government authorities, law enforcement agencies, regulators, or courts where required by applicable law</li>
+                                <li>Professional advisors including legal, accounting, or auditing entities</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">
+                                All such disclosures shall be made only to the extent necessary and subject to reasonable confidentiality obligations where applicable.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Photography, Videography, and Media Consent -->
+                    <div>
+                        <div class="terms-section-title" id="section-6">
+                            <div class="terms-number-badge">6</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Photography, Videography, and Media Consent</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p style="margin-bottom: 1rem;">
+                                Participants acknowledge and agree that photographs, audio recordings, and video footage may be captured during the Event for documentation, promotional, advertising, archival, and commercial purposes.
+                            </p>
+                            <p>Such content may be published on:</p>
+                            <ul class="bullet-list" style="margin-bottom: 1.25rem;">
+                                <li>Company websites</li>
+                                <li>Social media platforms</li>
+                                <li>Promotional materials</li>
+                                <li>Newsletters and brochures</li>
+                                <li>Press releases and media publications</li>
+                            </ul>
+
+                            <!-- Info notice box -->
+                            <div class="warning-notice-box" style="border-left-color: var(--secondary); background: #f0f7ff;">
+                                <i class="fas fa-camera warning-icon" style="color: var(--secondary);"></i>
+                                <div class="warning-text">
+                                    <h5 style="color: var(--secondary);">Opt-Out Notice</h5>
+                                    <p style="color: var(--primary);">Participants who do not consent to being photographed or recorded must notify the Company in writing prior to the commencement of the Event. While reasonable efforts will be made to accommodate such requests, the Company cannot guarantee exclusion from all incidental captures in public areas of the Event venue.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Data Security -->
+                    <div>
+                        <div class="terms-section-title" id="section-7">
+                            <div class="terms-number-badge">7</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Data Security</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p style="margin-bottom: 1rem;">
+                                The Company implements reasonable technical, administrative, and organizational safeguards to protect personal information against unauthorized access, misuse, alteration, disclosure, or destruction.
+                            </p>
+                            <p style="margin-bottom: 0;">
+                                However, while we strive to protect personal data, no method of transmission over the internet or electronic storage is completely secure. Accordingly, the Company does not guarantee absolute security of information.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 8. Data Retention -->
+                    <div>
+                        <div class="terms-section-title" id="section-8">
+                            <div class="terms-number-badge">8</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Data Retention</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p>
+                                Personal information shall be retained only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, comply with legal obligations, resolve disputes, and enforce agreements. Upon expiry of the applicable retention period, information may be securely deleted, anonymized, or archived in accordance with applicable laws.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 9. Participant Rights -->
+                    <div>
+                        <div class="terms-section-title" id="section-9">
+                            <div class="terms-number-badge">9</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Participant Rights</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p>Subject to applicable laws, Participants may have the right to:</p>
+                            <ul class="bullet-list">
+                                <li>Request access to personal information</li>
+                                <li>Request correction or updating of inaccurate information</li>
+                                <li>Withdraw consent for certain processing activities</li>
+                                <li>Request deletion of personal data, where legally permissible</li>
+                                <li>Opt out of marketing communications</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">
+                                Requests may be submitted using the contact details provided below.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 10. Cookies and Digital Technologies -->
+                    <div>
+                        <div class="terms-section-title" id="section-10">
+                            <div class="terms-number-badge">10</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Cookies and Digital Technologies</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p>
+                                Our website and digital platforms may use cookies, analytics tools, and similar technologies to enhance user experience, analyze website traffic, and improve services. Users may modify browser settings to refuse cookies; however, certain functionalities may become unavailable.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 11. Third-Party Links -->
+                    <div>
+                        <div class="terms-section-title" id="section-11">
+                            <div class="terms-number-badge">11</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Third-Party Links</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p style="margin-bottom: 1rem;">
+                                Our website or Event materials may contain links to third-party websites or services. The Company shall not be responsible for the privacy practices, policies, or content of such external websites.
+                            </p>
+                            <p style="margin-bottom: 0;">
+                                Participants are encouraged to review the privacy policies of third-party platforms before providing personal information.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 12. Consent -->
+                    <div>
+                        <div class="terms-section-title" id="section-12">
+                            <div class="terms-number-badge">12</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Consent</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p>
+                                By attending or participating in any Event organized by Prompt Trade Fairs India Private Limited, Participants expressly consent to the collection, processing, storage, use, and disclosure of their personal information in accordance with this Privacy Policy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 13. Amendments to this Privacy Policy -->
+                    <div>
+                        <div class="terms-section-title" id="section-13">
+                            <div class="terms-number-badge">13</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Amendments to this Privacy Policy</h3>
+                        </div>
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <p style="margin-bottom: 1rem;">
+                                The Company reserves the right to amend, modify, or update this Privacy Policy at any time without prior notice. Updated versions shall be published on the Company’s official website with the revised effective date.
+                            </p>
+                            <p style="margin-bottom: 0;">
+                                Continued participation in our Events following such updates shall constitute acceptance of the revised Privacy Policy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 14. Contact Information -->
+                    <div style="margin-top: 1rem;">
+                        <div class="terms-section-title" id="section-14">
+                            <div class="terms-number-badge">14</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Contact Information</h3>
+                        </div>
+
+                        <p style="color: var(--text-main); font-size: 0.98rem; line-height: 1.7; margin-bottom: 1rem; padding-left: 1.25rem;">
+                            For any questions, requests, or concerns regarding this Privacy Policy or the handling of personal information, please contact:
+                        </p>
+
+                        <!-- Contact Grid -->
+                        <div class="contact-grid">
+                            <!-- Website -->
+                            <a href="https://www.prompttradefairs.com" target="_blank" rel="noopener noreferrer" class="contact-method-card" id="contact-web">
+                                <div class="contact-method-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <span class="contact-method-label">Website</span>
+                                <span class="contact-method-value">www.prompttradefairs.com</span>
+                            </a>
+
+                            <!-- Phone -->
+                            <a href="tel:+919543668094" class="contact-method-card" id="contact-phone">
+                                <div class="contact-method-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <span class="contact-method-label">Phone</span>
+                                <span class="contact-method-value">+91 95436 68094</span>
+                            </a>
+
+                            <!-- Email -->
+                            <a href="mailto:mktg@prompttradefairs.com" class="contact-method-card" id="contact-email">
+                                <div class="contact-method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span class="contact-method-label">Email</span>
+                                <span class="contact-method-value">mktg@prompttradefairs.com</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="site.js"></script>
+</body>
+
+</html>

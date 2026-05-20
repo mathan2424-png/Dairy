@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Terms | India Dairy Show 2027</title>
+    <meta name="description"
+        content="Read the official Payment Terms and Conditions for exhibitors participating in India Dairy Show 2027. Organized by Prompt Trade Fairs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
+    
+    <style>
+        .payment-card {
+            background: #ffffff;
+            padding: 3.5rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+            border: 1px solid #e2e8f0;
+            max-width: 900px;
+            margin: 4rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--secondary) 0%, #60a5fa 100%);
+        }
+
+        .terms-section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 0.75rem;
+        }
+
+        .terms-number-badge {
+            width: 40px;
+            height: 40px;
+            background: rgba(37, 99, 235, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .payment-card:hover .terms-number-badge {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .terms-subsection {
+            margin-bottom: 1.5rem;
+            padding-left: 1.25rem;
+            border-left: 3px solid #e2e8f0;
+            transition: border-color 0.3s ease;
+        }
+
+        .terms-subsection:hover {
+            border-color: var(--secondary);
+        }
+
+        .terms-subsection h4 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .terms-subsection p {
+            color: var(--text-main);
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        .warning-notice-box {
+            background: #fffdf5;
+            border-left: 4px solid #f59e0b;
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.05);
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .warning-icon {
+            color: #d97706;
+            font-size: 1.25rem;
+            margin-top: 2px;
+        }
+
+        .warning-text h5 {
+            color: #92400e;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .warning-text p {
+            color: #78350f;
+            font-size: 0.92rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method-card {
+            background: #f8fafc;
+            padding: 1.75rem;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .contact-method-card:hover {
+            transform: translateY(-8px);
+            background: #ffffff;
+            border-color: var(--secondary);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.08);
+        }
+
+        .contact-method-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(37, 99, 235, 0.06);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            transition: all 0.4s ease;
+        }
+
+        .contact-method-card:hover .contact-method-icon {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .contact-method-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method-value {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-method-card:hover .contact-method-value {
+            color: var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .payment-card {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1rem;
+                border-radius: 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="India Dairy Show 2027" class="nav-logo">
+                </a>
+            </div>
+            <ul class="nav-links" id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="has-dropdown">
+                    <a href="#exhibitors.html">Exhibitor <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="why-exhibit.html">Why Exhibit</a></li>
+                        <li><a href="exhibit-profile.html">Exhibit Profile</a></li>
+                        <li><a href="event-brochure.html">Event Brochure</a></li>
+                        <li><a href="layout.html">Layout</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#visitors.html">Visitors <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="visitors.html">Visitor Profile</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#media.html">Media <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="event-photos.html">Event Photos</a></li>
+                        <li><a href="event-videos.html">Event Videos</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
+                aria-controls="primary-navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.45)), url(assets/presence_new_bg.png) no-repeat center center / cover;">
+            <div class="container">
+                <div class="hero-content" style="transform: none; padding-bottom: 0;">
+                    <h1>Payment <span class="gradient-text">Terms</span></h1>
+                    <p>Official Stall Allotment & Financial Guidelines for Exhibitors</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms Content Section -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="payment-card">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <span class="section-subtitle">PROMPT TRADE FAIRS (INDIA) PRIVATE LIMITED</span>
+                        <h2 style="font-size: 2rem; color: var(--primary); font-family: 'Outfit', sans-serif;">Exhibitor Payment Policy</h2>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                            Please read the payment obligations, schedule, and procedures outlined below for participating in our exhibition.
+                        </p>
+                    </div>
+
+                    <!-- 1. Payment Obligations -->
+                    <div>
+                        <div class="terms-section-title">
+                            <div class="terms-number-badge">1</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Payment Obligations</h3>
+                        </div>
+
+                        <!-- 1.1 Exhibitor Participation Charges -->
+                        <div class="terms-subsection">
+                            <h4>1.1 Exhibitor Participation Charges</h4>
+                            <p>
+                                By participating in exhibitions organized by Prompt Trade Fairs India Private Limited, exhibitors agree to pay all applicable participation and stall charges as specified in the official Exhibitor Agreement or Contract Form.
+                            </p>
+                        </div>
+
+                        <!-- 1.2 Payment Schedule -->
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <h4>1.2 Payment Schedule</h4>
+                            <p style="margin-bottom: 1rem;">
+                                A minimum advance payment of <strong>50% of the total stall charges</strong> must accompany the duly completed Contract Form at the time of booking confirmation.
+                            </p>
+                            <p style="margin-bottom: 1.25rem;">
+                                The remaining balance towards stall charges, along with charges for additional facilities such as furniture, spotlights, electrical fittings, branding, or any other requested services, must be paid in full prior to the commencement of the exhibition.
+                            </p>
+
+                            <!-- Warning Notice Box -->
+                            <div class="warning-notice-box">
+                                <i class="fas fa-circle-exclamation warning-icon"></i>
+                                <div class="warning-text">
+                                    <h5>Stall Allotment Rule</h5>
+                                    <p>Possession and allotment of exhibition stalls will be granted only upon receipt of full payment.</p>
+                                </div>
+                            </div>
+
+                            <p>
+                                All payments must be made through <strong>Demand Draft or Bank Transfer (IMPS, UPI, NEFT)</strong> in favour of <strong>Prompt Trade Fairs (India) Pvt. Ltd.</strong>, payable at Chennai.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Additional Charges -->
+                    <div>
+                        <div class="terms-section-title">
+                            <div class="terms-number-badge">2</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Additional Charges</h3>
+                        </div>
+
+                        <!-- 2.1 Additional Services and Facilities -->
+                        <div class="terms-subsection" style="margin-bottom: 0;">
+                            <h4>2.1 Additional Services and Facilities</h4>
+                            <p style="margin-bottom: 0;">
+                                Any additional services or facilities requested by exhibitors beyond the standard stall package may attract supplementary charges. Applicable charges will be communicated in advance. Services will be provided only upon confirmation and acceptance of the additional charges by the exhibitor.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Contact Information -->
+                    <div style="margin-top: 1rem;">
+                        <div class="terms-section-title">
+                            <div class="terms-number-badge">3</div>
+                            <h3 style="font-size: 1.4rem; color: var(--primary); margin: 0; font-family: 'Outfit', sans-serif;">Contact Information</h3>
+                        </div>
+
+                        <p style="color: var(--text-main); font-size: 0.98rem; line-height: 1.7; margin-bottom: 1rem; padding-left: 1.25rem;">
+                            For any clarification or assistance regarding payment terms, please contact:
+                        </p>
+
+                        <!-- Contact Grid -->
+                        <div class="contact-grid">
+                            <!-- Website -->
+                            <a href="https://www.prompttradefairs.com" target="_blank" rel="noopener noreferrer" class="contact-method-card" id="contact-web">
+                                <div class="contact-method-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <span class="contact-method-label">Website</span>
+                                <span class="contact-method-value">www.prompttradefairs.com</span>
+                            </a>
+
+                            <!-- Phone -->
+                            <a href="tel:+919543668094" class="contact-method-card" id="contact-phone">
+                                <div class="contact-method-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <span class="contact-method-label">Contact Number</span>
+                                <span class="contact-method-value">+91 95436 68094</span>
+                            </a>
+
+                            <!-- Email -->
+                            <a href="mailto:mktg@prompttradefairs.com" class="contact-method-card" id="contact-email">
+                                <div class="contact-method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span class="contact-method-label">Email</span>
+                                <span class="contact-method-value">mktg@prompttradefairs.com</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="site.js"></script>
+</body>
+
+</html>

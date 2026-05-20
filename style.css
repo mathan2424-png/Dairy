@@ -2096,6 +2096,31 @@ h2 {
     color: var(--secondary);
 }
 
+.footer-bottom-links {
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-links a {
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--secondary);
+}
+
+.link-separator {
+    color: #cbd5e1;
+    user-select: none;
+}
+
 
 
 /* Responsive */
