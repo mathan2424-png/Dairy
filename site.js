@@ -272,23 +272,97 @@
         });
     });
 
-    // Dynamic Footer Loading
+    // Dynamic Footer Loading with offline/CORS fallback
     async function loadFooter() {
         const footerPlaceholder = document.getElementById('footer-placeholder');
         if (!footerPlaceholder) return;
+
+        const footerHTML = `<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-about">
+            <img src="assets/logo.png" alt="India Dairy Show" class="footer-logo">
+            <p>Leading the transformation of South Indian dairy industry through innovation and collaboration.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="exhibitors.html">Exhibitor</a></li>
+                <li><a href="visitors.html">Visitors</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <div class="footer-info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div class="footer-info-content">
+                    <a href="tel:+914442142483">+91 44 4214 2483</a>
+                </div>
+            </div>
+            <div class="footer-info-item">
+                <i class="fas fa-mobile-alt"></i>
+                <div class="footer-info-content">
+                    <span><a href="tel:+919391391162">+91 93913 91162</a> / <a href="tel:+919941008371">+91 99410 08371</a></span>
+                </div>
+            </div>
+            <div class="footer-info-item">
+                <i class="fas fa-envelope"></i>
+                <div class="footer-info-content">
+                    <div class="email-list">
+                        <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a>
+                        <a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-office">
+            <h4>Head Office</h4>
+            <div class="footer-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="footer-info-content">
+                    <span>Prompt Tower, Plot No: 324, Ram Nagar South Extension 12th Street,
+                        Off Radial Road,Near Kamakshi Hospital,Pallikaranai,
+                        Chennai - 600 100, India.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-links">
+                <a href="payment-terms.html">Payment Terms</a>
+                <span class="link-separator">&bull;</span>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <span class="link-separator">&bull;</span>
+                <a href="refund-policy.html">Refund Policy</a>
+            </div>
+            <p>&copy; 2027 India Dairy Show. All rights reserved. | Developed & Maintained by <a
+                    href="https://www.oceansoftwares.com/" target="_blank" rel="noopener noreferrer">Ocean Softwares</a></p>
+        </div>
+    </div>
+</footer>`;
 
         try {
             const response = await fetch('footer.html');
             if (response.ok) {
                 const html = await response.text();
                 footerPlaceholder.innerHTML = html;
-                
-                // Initialize any footer-specific listeners if needed here
             } else {
-                console.error('Failed to load footer:', response.statusText);
+                console.warn('Failed to fetch footer.html dynamically, using built-in fallback.');
+                footerPlaceholder.innerHTML = footerHTML;
             }
         } catch (error) {
-            console.error('Error loading footer:', error);
+            console.warn('CORS or Network error fetching footer.html, using built-in fallback.');
+            footerPlaceholder.innerHTML = footerHTML;
         }
     }
 
