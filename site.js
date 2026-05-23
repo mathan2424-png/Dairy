@@ -303,9 +303,9 @@
         <div class="footer-contact">
             <h4>Contact Us</h4>
             <div class="footer-info-item">
-                <i class="fas fa-phone-alt"></i>
+                <i class="fas fa-mobile-alt"></i>
                 <div class="footer-info-content">
-                    <a href="tel:+914442142483">+91 44 4214 2483</a>
+                    <a href="tel:+919543668094">+91 95436 68094</a>
                 </div>
             </div>
             <div class="footer-info-item">
@@ -318,8 +318,8 @@
                 <i class="fas fa-envelope"></i>
                 <div class="footer-info-content">
                     <div class="email-list">
-                        <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a>
                         <a href="mailto:prompttradefairs@gmail.com">prompttradefairs@gmail.com</a>
+                        <a href="mailto:project2@prompttradefairs.com">project2@prompttradefairs.com</a>
                     </div>
                 </div>
             </div>
@@ -366,10 +366,41 @@
         }
     }
 
+    // Hero Background Slideshow Cycling
+    function initHeroSlideshow() {
+        const slides = document.querySelectorAll('.hero-slides .slide');
+        if (slides.length <= 1) return;
+
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000); // Transitions every 5 seconds
+    }
+
+    // Dynamic Announcement Ticker Injection
+    function loadAnnouncementTicker() {
+        // Prevent multiple tickers if script runs again
+        if (document.querySelector('.announcement-ticker-bar')) return;
+
+        const ticker = document.createElement('div');
+        ticker.className = 'announcement-ticker-bar';
+        ticker.innerHTML = `
+            <div class="ticker-content">
+                <span>🚨 India Dairy Show 2027 | 22, 23 & 24 January 2027 | CODISSIA Trade Fair Complex, Coimbatore, Tamil Nadu, India | South India's Premier Dairy Summit 🚨</span>
+                <span>🚨 India Dairy Show 2027 | 22, 23 & 24 January 2027 | CODISSIA Trade Fair Complex, Coimbatore, Tamil Nadu, India | South India's Premier Dairy Summit 🚨</span>
+            </div>
+        `;
+        document.body.insertBefore(ticker, document.body.firstChild);
+    }
+
     window.addEventListener('scroll', syncHeaderState, { passive: true });
     syncHeaderState();
     setupCountAnimations();
     loadFooter();
+    loadAnnouncementTicker();
+    initHeroSlideshow();
 })();
 
 // Accordion Toggle Function

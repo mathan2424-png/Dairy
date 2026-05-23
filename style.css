@@ -38,6 +38,10 @@ body {
     overflow-x: hidden;
 }
 
+p {
+    text-align: justify;
+}
+
 h1,
 h2,
 h3,
@@ -203,18 +207,19 @@ img {
 /* Header */
 header {
     position: fixed;
-    top: 0;
+    top: 38px; /* Offset for running announcement ticker */
     left: 0;
     width: 100%;
     z-index: 1000;
     padding: 0.5rem 0;
-    transition: var(--transition);
+    transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
     color: #000000;
     background: white;
     /* Explicitly transparent by default */
 }
 
 header.scrolled {
+    top: 0; /* Stick to absolute top on scroll */
     background: var(--glass);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
@@ -231,13 +236,13 @@ nav {
 }
 
 .nav-logo {
-    height: 50px;
+    height: 65px;
     width: auto;
     transition: var(--transition);
 }
 
 header.scrolled .nav-logo {
-    height: 40px;
+    height: 56px;
 }
 
 .nav-links {
@@ -366,13 +371,39 @@ header.scrolled .nav-logo {
 #hero {
     height: 85vh;
     min-height: 550px;
-    background: url('assets/bg.png') no-repeat center center/cover;
     position: relative;
     display: flex;
     align-items: center;
     color: var(--white);
     padding-top: 100px;
     padding-bottom: 50px;
+    overflow: hidden;
+}
+
+.hero-slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-slides .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-slides .slide.active {
+    opacity: 1;
 }
 
 .hero-overlay {
@@ -381,7 +412,8 @@ header.scrolled .nav-logo {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0));
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45));
+    z-index: 2; /* Sits above slides but below content */
 }
 
 .hero-content {
@@ -393,7 +425,7 @@ header.scrolled .nav-logo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 16rem;
+    padding-bottom: 13rem;
 }
 
 .page-hero {
@@ -946,21 +978,27 @@ h2 {
 }
 
 .about-header-icon {
-    height: 35px;
+    height: 55px;
     width: auto;
 }
-
+/* 
 .header-line {
     width: 60px;
     height: 2px;
     background: #4A1E1B;
-}
+} */
 
 .about-content-styled h2 {
-    font-size: 2.8rem;
+    font-size: clamp(1.3rem, 2.5vw, 2.5rem);
     line-height: 1.2;
     margin-bottom: 1.5rem;
     color: #1A1A1A;
+}
+
+@media (min-width: 480px) {
+    .about-content-styled h2 {
+        white-space: nowrap;
+    }
 }
 
 .about-content-styled p {
@@ -1276,22 +1314,23 @@ h2 {
 }
 
 .why-exhibit-intro h2 {
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     color: var(--primary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.2;
     letter-spacing: -0.02em;
 }
 
 .why-exhibit-intro .intro-text {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     line-height: 1.8;
     color: #4B5563;
     font-weight: 400;
     max-width: 800px;
     margin: 0 auto;
+    text-align: justify;
 }
 
 @media (max-width: 768px) {
@@ -2547,10 +2586,11 @@ h2 {
 }
 
 .promo-spectrum-copy h2 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+    font-style: italic;
     color: var(--primary);
     margin-bottom: 1rem;
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
 .promo-spectrum-copy p {
@@ -2707,8 +2747,8 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     transition: var(--transition);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -2750,6 +2790,7 @@ h2 {
     min-height: 2.8rem;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .visitor-info p {
@@ -4432,4 +4473,38 @@ h2 {
         height: 28px;
         font-size: 0.8rem;
     }
+}
+
+/* Running Announcement Ticker Bar */
+.announcement-ticker-bar {
+    background: linear-gradient(90deg, #ed3237 0%, #a81c20 100%);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1001;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ticker-content {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: ticker-slide 30s linear infinite;
+}
+
+.ticker-content span {
+    display: inline-block;
+    padding-right: 4rem;
+    letter-spacing: 1px;
+}
+
+@keyframes ticker-slide {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
 }
