@@ -125,9 +125,10 @@
         .policy-table-wrapper {
             margin: 2rem 0;
             border-radius: 16px;
-            overflow: hidden;
+            overflow-x: auto;
             border: 1px solid #e2e8f0;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            -webkit-overflow-scrolling: touch;
         }
 
         .policy-table {
@@ -135,6 +136,7 @@
             border-collapse: collapse;
             text-align: left;
             font-size: 0.95rem;
+            min-width: 500px;
         }
 
         .policy-table th {
@@ -161,14 +163,39 @@
             background-color: #f8fafc;
         }
 
-        .charge-highlight {
+        .charge-row-content {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .charge-badge {
+            background-color: #fee2e2;
             color: #ef4444;
+            border: 1px solid #fca5a5;
             font-weight: 700;
-            background: #fef2f2;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            border-radius: 8px;
             font-size: 0.9rem;
+            line-height: 1;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 62px;
+        }
+
+        .charge-badge.danger {
+            background-color: #ef4444;
+            color: #ffffff;
+            border-color: #dc2626;
+        }
+
+        .charge-text {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
         .warning-notice-box {
@@ -408,21 +435,39 @@
                                     <tbody>
                                         <tr>
                                             <td>Up to 60 days before the exhibition</td>
-                                            <td><span class="charge-highlight">20% of total booked amount</span></td>
+                                            <td>
+                                                <div class="charge-row-content">
+                                                    <span class="charge-badge">20%</span>
+                                                    <span class="charge-text">of total booked amount</span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Up to 45 days before the exhibition</td>
-                                            <td><span class="charge-highlight">40% of total booked amount</span></td>
+                                            <td>
+                                                <div class="charge-row-content">
+                                                    <span class="charge-badge">40%</span>
+                                                    <span class="charge-text">of total booked amount</span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Up to 30 days before the exhibition</td>
-                                            <td><span class="charge-highlight">50% of total booked amount</span></td>
+                                            <td>
+                                                <div class="charge-row-content">
+                                                    <span class="charge-badge">50%</span>
+                                                    <span class="charge-text">of total booked amount</span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Less than 29 days before the exhibition</td>
-                                            <td><span class="charge-highlight"
-                                                    style="background: #ef4444; color: white;">100% of total booked
-                                                    amount</span></td>
+                                            <td>
+                                                <div class="charge-row-content">
+                                                    <span class="charge-badge danger">100%</span>
+                                                    <span class="charge-text" style="color: #ef4444; font-weight: 600;">of total booked amount</span>
+                                                </div>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

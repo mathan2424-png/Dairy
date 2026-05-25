@@ -623,6 +623,15 @@
         });
     }
 
+    // Auto-scroll to top on page load/refresh (Home Page specific)
+    const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html') || window.location.pathname === '';
+    if (isHomePage) {
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
     window.addEventListener('scroll', syncHeaderState, { passive: true });
     syncHeaderState();
     setupCountAnimations();
