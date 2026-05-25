@@ -16,12 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
     <style>
-        
-
-        
-
-        
-
         .media-tabs-container {
             background: var(--white);
             padding: 1.25rem 0;
@@ -232,7 +226,7 @@
         }
 
         @media (max-width: 768px) {
-            
+
 
             .video-grid {
                 grid-template-columns: 1fr;
@@ -293,14 +287,14 @@
                         <li><a href="visitors.html">Visitor Profile</a></li>
                     </ul>
                 </li>
-                <li class="has-dropdown">
+                <!-- <li class="has-dropdown">
                     <a href="media.html" class="active">Media <i class="fas fa-chevron-down"
                             style="font-size: 0.7rem; margin-left: 3px;"></i></a>
                     <ul class="dropdown">
                         <li><a href="event-photos.html">Event Photos</a></li>
                         <li><a href="event-videos.html">Event Videos</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
             <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
@@ -312,7 +306,8 @@
 
     <main>
         <!-- Media Hero -->
-        <section class="page-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.45)), url('assets/media_hero.png') no-repeat center center / cover;">
+        <section class="page-hero"
+            style="background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.45)), url('assets/media_hero.png') no-repeat center center / cover;">
             <div class="container">
                 <span class="section-subtitle" style="color: #fcd34d;">LATEST NEWS & UPDATES</span>
                 <h1>Media Center</h1>
@@ -459,7 +454,7 @@
             // 3. Handle section visibility with exclusivity
             sections.forEach(section => {
                 const shouldShow = (type === 'all' || section.dataset.type === type);
-                
+
                 if (shouldShow) {
                     section.style.display = 'block';
                     // Force reflow
@@ -496,4 +491,3 @@
 </body>
 
 </html>
-

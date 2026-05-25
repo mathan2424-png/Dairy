@@ -130,7 +130,7 @@
         navigation.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', function (event) {
                 const parentLi = link.parentElement;
-                
+
                 if (isMobileViewport() && parentLi.classList.contains('has-dropdown')) {
                     // Check if the click was on the link text (not children of the dropdown)
                     if (event.target === link || link.contains(event.target)) {
@@ -248,7 +248,7 @@
         item.addEventListener('click', () => {
             const img = item.querySelector('img');
             const caption = item.querySelector('.gallery-caption')?.textContent || '';
-            
+
             modalBody.innerHTML = `
                 <img src="${img.src}" alt="${img.alt}" class="modal-img">
                 <div class="modal-caption">${caption}</div>
@@ -296,7 +296,7 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="exhibitors.html">Exhibitor</a></li>
                 <li><a href="visitors.html">Visitors</a></li>
-                <li><a href="media.html">Media</a></li>
+                <!-- <li><a href="#">Media</a></li> -->
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
@@ -311,7 +311,7 @@
             <div class="footer-info-item">
                 <i class="fas fa-mobile-alt"></i>
                 <div class="footer-info-content">
-                    <span><a href="tel:+919391391162">+91 93913 91162</a> / <a href="tel:+919941008371">+91 99410 08371</a></span>
+                    <span class="phone-list"><a href="tel:+919391391162">+91 93913 91162</a><span class="phone-sep"> / </span><a href="tel:+919941008371">+91 99410 08371</a></span>
                 </div>
             </div>
             <div class="footer-info-item">
@@ -366,55 +366,283 @@
         }
     }
 
-    // Hero Background Slideshow Cycling
     function initHeroSlideshow() {
         const slides = document.querySelectorAll('.hero-slides .slide');
+        const dots = document.querySelectorAll('.hero-dots .dot');
         if (slides.length <= 1) return;
 
         let currentSlide = 0;
-        setInterval(() => {
+        let slideInterval;
+
+        function showSlide(index) {
             slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
+            if (dots.length > currentSlide) {
+                dots[currentSlide].classList.remove('active');
+            }
+            
+            currentSlide = index;
+            
             slides[currentSlide].classList.add('active');
-        }, 5000); // Transitions every 5 seconds
+            if (dots.length > currentSlide) {
+                dots[currentSlide].classList.add('active');
+            }
+        }
+
+        function nextSlide() {
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
+
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetSlideshow() {
+            clearInterval(slideInterval);
+            startSlideshow();
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                resetSlideshow();
+            });
+        });
+
+        startSlideshow();
     }
 
-    // Dynamic Announcement Ticker Injection
-    function loadAnnouncementTicker() {
-        // Prevent multiple tickers if script runs again
-        if (document.querySelector('.announcement-ticker-bar')) return;
+    function initEnquiryModal() {
+        const modal = document.getElementById('enquiry-modal');
+        const openBtn = document.getElementById('open-enquiry-btn');
+        const closeBtn = document.getElementById('close-enquiry-btn');
+        const cancelBtn = document.getElementById('cancel-enquiry-btn');
+        const form = document.getElementById('enquiry-form');
+        const successScreen = document.getElementById('modal-success-screen');
+        const closeSuccessBtn = document.getElementById('close-success-btn');
+        
+        if (!modal || !openBtn || !form) return;
 
-        const ticker = document.createElement('div');
-        ticker.className = 'announcement-ticker-bar';
-        ticker.innerHTML = `
-            <div class="ticker-content">
-                <span>🚨 India Dairy Show 2027 | 22, 23 & 24 January 2027 | CODISSIA Trade Fair Complex, Coimbatore, Tamil Nadu, India | South India's Premier Dairy Summit 🚨</span>
-                <span>🚨 India Dairy Show 2027 | 22, 23 & 24 January 2027 | CODISSIA Trade Fair Complex, Coimbatore, Tamil Nadu, India | South India's Premier Dairy Summit 🚨</span>
-            </div>
-        `;
-        document.body.insertBefore(ticker, document.body.firstChild);
+        const radioButtons = form.querySelectorAll('input[name="registrationType"]');
+        const stallFields = form.querySelectorAll('.stall-only');
+        const visitorFields = form.querySelectorAll('.visitor-only');
+
+        // Toggle form fields based on registration type (Stall or Visitor)
+        function toggleRegistrationFields(type) {
+            if (type === 'stall') {
+                // Show stall fields
+                stallFields.forEach(field => {
+                    field.classList.remove('hidden');
+                });
+                // Hide visitor fields and clear their values
+                visitorFields.forEach(field => {
+                    field.classList.add('hidden');
+                    const input = field.querySelector('input, select');
+                    if (input) {
+                        input.value = '';
+                    }
+                });
+            } else {
+                // Hide stall fields and clear their values
+                stallFields.forEach(field => {
+                    field.classList.add('hidden');
+                    const input = field.querySelector('input, select, textarea');
+                    if (input) {
+                        input.value = '';
+                    }
+                });
+                // Show visitor fields
+                visitorFields.forEach(field => {
+                    field.classList.remove('hidden');
+                });
+            }
+            
+            // Clear any invalid states when toggled
+            form.querySelectorAll('.form-group.invalid').forEach(group => {
+                group.classList.remove('invalid');
+            });
+        }
+
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                toggleRegistrationFields(e.target.value);
+            });
+        });
+
+        // Initialize state
+        toggleRegistrationFields('stall');
+
+        // Modal triggers
+        function openModal() {
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+            
+            // Reset form states
+            form.classList.remove('hidden');
+            form.reset();
+            toggleRegistrationFields('stall');
+            if (successScreen) successScreen.classList.add('hidden');
+            
+            form.querySelectorAll('.form-group.invalid').forEach(group => {
+                group.classList.remove('invalid');
+            });
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = ''; // Restore scroll
+        }
+
+        openBtn.addEventListener('click', openModal);
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+        if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeModal);
+
+        // Click outside overlay to close modal
+        const overlay = modal.querySelector('.modal-overlay');
+        if (overlay) {
+            overlay.addEventListener('click', closeModal);
+        }
+
+        // Escape key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Validate individual fields
+        function validateField(group) {
+            const input = group.querySelector('input, select');
+            if (!input) return true;
+
+            let isValid = true;
+            
+            // If field is hidden, it's always valid (we don't validate hidden fields)
+            if (group.classList.contains('hidden')) {
+                return true;
+            }
+
+            if (input.hasAttribute('required')) {
+                if (!input.value.trim()) {
+                    isValid = false;
+                }
+            }
+
+            // Name validation (only allow letters and spaces)
+            if (isValid && input.getAttribute('name') === 'name') {
+                const nameVal = input.value.trim();
+                const nameRegex = /^[a-zA-Z\s]+$/;
+                if (!nameRegex.test(nameVal)) {
+                    isValid = false;
+                }
+            }
+
+            // Mobile number regex validation
+            if (isValid && input.getAttribute('type') === 'tel') {
+                const mobileVal = input.value.trim().replace(/\D/g, '');
+                if (mobileVal.length !== 10) {
+                    isValid = false;
+                }
+            }
+
+            // Email validation regex (only check if value is not empty)
+            if (isValid && input.getAttribute('type') === 'email') {
+                const emailVal = input.value.trim();
+                if (emailVal) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(emailVal)) {
+                        isValid = false;
+                    }
+                }
+            }
+
+            if (!isValid) {
+                group.classList.add('invalid');
+            } else {
+                group.classList.remove('invalid');
+            }
+
+            return isValid;
+        }
+
+        // Live validation on input focus/blur/change
+        form.querySelectorAll('input, select, textarea').forEach(input => {
+            const group = input.closest('.form-group');
+            if (!group) return;
+
+            // Restrict input characters dynamically
+            if (input.getAttribute('name') === 'name') {
+                input.addEventListener('input', () => {
+                    input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+                });
+            }
+
+            if (input.getAttribute('type') === 'tel') {
+                input.addEventListener('input', () => {
+                    input.value = input.value.replace(/\D/g, '').slice(0, 10);
+                });
+            }
+
+            input.addEventListener('blur', () => validateField(group));
+            input.addEventListener('change', () => validateField(group));
+            input.addEventListener('input', () => {
+                if (group.classList.contains('invalid')) {
+                    validateField(group);
+                }
+            });
+        });
+
+        // Form Submit
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formGroups = form.querySelectorAll('.form-group');
+            let isFormValid = true;
+
+            formGroups.forEach(group => {
+                const isValid = validateField(group);
+                if (!isValid) {
+                    isFormValid = false;
+                }
+            });
+
+            if (isFormValid) {
+                alert('Registration Successful!');
+                closeModal();
+            } else {
+                // Scroll the first invalid group into view
+                const firstInvalid = form.querySelector('.form-group.invalid');
+                if (firstInvalid) {
+                    firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
     }
 
     window.addEventListener('scroll', syncHeaderState, { passive: true });
     syncHeaderState();
     setupCountAnimations();
     loadFooter();
-    loadAnnouncementTicker();
     initHeroSlideshow();
+    initEnquiryModal();
 })();
 
 // Accordion Toggle Function
 function toggleAccordion(header) {
     const item = header.parentElement;
     const container = item.parentElement;
-    
+
     // Optional: Close other items
     container.querySelectorAll('.accordion-item').forEach(otherItem => {
         if (otherItem !== item) {
             otherItem.classList.remove('active');
         }
     });
-    
+
     // Toggle current item
     item.classList.toggle('active');
 }

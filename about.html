@@ -16,12 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
     <style>
-        
-
-        
-
-        
-
         .mission-vision-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -37,6 +31,7 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         .mv-card::before {
@@ -78,6 +73,7 @@
         .mv-card p {
             font-size: 0.95rem;
             line-height: 1.5;
+            text-align: center !important;
         }
 
         .organizer-section {
@@ -228,7 +224,7 @@
         }
 
         @media (max-width: 992px) {
-            
+
 
             .mission-vision-grid {
                 gap: 2rem;
@@ -250,11 +246,11 @@
         }
 
         @media (max-width: 768px) {
-            
 
-            
 
-            
+
+
+
 
             .mission-vision-grid,
             .organizer-grid,
@@ -317,14 +313,14 @@
                         <li><a href="visitors.html">Visitor Profile</a></li>
                     </ul>
                 </li>
-                <li class="has-dropdown">
+                <!-- <li class="has-dropdown">
                     <a href="#media.html">Media <i class="fas fa-chevron-down"
                             style="font-size: 0.7rem; margin-left: 3px;"></i></a>
                     <ul class="dropdown">
                         <li><a href="event-photos.html">Event Photos</a></li>
                         <li><a href="event-videos.html">Event Videos</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
             <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation"
@@ -336,7 +332,8 @@
 
     <main>
         <!-- About Hero Section -->
-        <section class="page-hero" style="background: linear-gradient(rgba(15, 23, 42, 0.7), rgb(15 23 42 / 8%)), url(assets/about_hero.png) no-repeat center center / cover;">
+        <section class="page-hero"
+            style="background: linear-gradient(rgba(15, 23, 42, 0.7), rgb(15 23 42 / 8%)), url(assets/about_hero.png) no-repeat center center / cover;">
             <div class="container">
                 <h1>About Us</h1>
                 <p class="max-w-700">Prompt Trade Fairs India Private Limited proudly brings together the vision,
@@ -477,7 +474,7 @@
         </section>
     </main>
 
-        <div id="footer-placeholder"></div>
+    <div id="footer-placeholder"></div>
 
     <script src="site.js"></script>
 </body>
