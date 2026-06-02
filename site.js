@@ -286,6 +286,7 @@
                 <a href="https://www.facebook.com/profile.php?id=61590495446227" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/indiadiaryshow?utm_source=qr&igsh=MzM3OGhjOHMzbHlh" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://youtube.com/@promptexpo123" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/company/prompt-trade-fairs-i-pvt-ltd/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
         <div class="footer-links">
