@@ -409,11 +409,11 @@ header.scrolled .nav-logo {
 
 /* Homepage Hero Slide Backgrounds with Premium Overlay gradients */
 .hero-slides .slide-1 {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.208), rgba(15, 23, 42, 0.148)), url('assets/bg.png');
+    background-image: linear-gradient(rgba(17, 46, 65, 0.258), rgba(15, 23, 42, 0.135)), url('assets/bg.png');
 }
 
 .hero-slides .slide-2 {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.441), rgba(15, 23, 42, 0.071)), url('assets/MVlbslbekeREUf5-_V0YjEfykrzEx_6OYlgsync7j8Xqz3sr2OPHOTqbQOoupWrCGTA11lpuFdBdJV4RhHx3w0PkwFDalNa69FApnHUquSEww2BStFak1IY1bR18ClTY3v8IogojA34iwrzk_Dm-PzVF0VebxTU9HNkyYyIzYwe3noVVfogaNwv3ASo7cv8f.jpg');
+    background-image: linear-gradient(rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.071)), url('assets/MVlbslbekeREUf5-_V0YjEfykrzEx_6OYlgsync7j8Xqz3sr2OPHOTqbQOoupWrCGTA11lpuFdBdJV4RhHx3w0PkwFDalNa69FApnHUquSEww2BStFak1IY1bR18ClTY3v8IogojA34iwrzk_Dm-PzVF0VebxTU9HNkyYyIzYwe3noVVfogaNwv3ASo7cv8f.jpg');
 }
 
 .hero-slides .slide-3 {

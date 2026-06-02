@@ -283,10 +283,9 @@
             <img src="assets/logo.png" alt="India Dairy Show" class="footer-logo">
             <p>Leading the transformation of South Indian dairy industry through innovation and collaboration.</p>
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61590495446227" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/indiadiaryshow?utm_source=qr&igsh=MzM3OGhjOHMzbHlh" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@promptexpo123" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
         <div class="footer-links">
